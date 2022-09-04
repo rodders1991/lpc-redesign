@@ -1,12 +1,42 @@
+.root {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .container {
-  display: flex;
-  justify-content: space-between;
   max-width: var(--size-max-width);
   align-items: center;
   margin: 0 auto;
   padding: var(--space-2xl) var(--size-gutter);
 }
 
+.topContainer {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.callBackButton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  font-weight: var(--semibold);
+  color: var(--accent);
+}
+
+.hamburgerMenu {
+  display: none;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
 .navigation {
   display: flex;
   list-style: none;
@@ -16,19 +46,22 @@
 
 .navigationItem {
   display: inline-flex;
+  text-transform: uppercase;
   align-items: center;
   flex-direction: row;
+  font-size: var(--text-md);
+  font-weight: var(--body);
+  margin-left: 2rem;
 }
 
 .navigationItem a {
   border-bottom: 1.5px solid transparent;
-  color: currentColor;
+  color: white;
   text-decoration: none;
 }
 
 .navigationItem a:hover {
-  border-bottom-color: var(--primary);
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .logoLink {
@@ -40,20 +73,33 @@
   gap: var(--space-md);
 }
 
-@media (max-width: 767px) {
-  .logoLink > span:last-child {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+@media (max-width: 1024px) {
+  .navigationItem {
+    font-size: var(--text-sm);
+    margin-left: 1rem;
+  }
+  .callBackButton {
+    font-size: var(--text-md);
   }
 }
 
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  .topContainer {
+    display: none;
+  }
+  .hamburgerMenu {
+    display: block;
+  }
+  .topContainer {
+    width: auto;
+  }
+  .bottomContainer {
+    align-items: center;
+  }
+}
 .logo {
   height: var(--size-logo);
   width: var(--size-logo);
