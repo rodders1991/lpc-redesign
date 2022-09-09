@@ -50,7 +50,7 @@
   align-items: center;
   flex-direction: row;
   font-size: var(--text-md);
-  font-weight: var(--body);
+  font-weight: 400;
   margin-left: 2rem;
 }
 
@@ -58,6 +58,10 @@
   border-bottom: 1.5px solid transparent;
   color: white;
   text-decoration: none;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .navigationItem a:hover {

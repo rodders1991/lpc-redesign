@@ -1,21 +1,27 @@
-@import url("https://use.typekit.net/dag8lpn.css");
-
 @font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
+  font-family: 'Klavika';
+  font-weight: 100 200;
   font-display: swap;
   font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+  font-named-instance: 'Light';
+  src: url('/fonts/Klavika-Light.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
+  font-family: 'Klavika';
   font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/Klavika-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Klavika';
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Bold';
+  src: url('/fonts/Klavika-Bold.otf') format('opentype');
 }
 
 html {
