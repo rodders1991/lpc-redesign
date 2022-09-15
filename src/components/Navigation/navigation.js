@@ -1,15 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from './logo.png'
 import { MdSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-class Navigation extends React.Component {
-  render() {
-    console.log("navigation", this.props);
-    const { navigation: navigationItems } = this.props;
-
+const Navigation = ({ navigation: navigationItems, logo }) => {
     return (
       <div className={styles.root}>
         <nav role="navigation" className={styles.container} aria-label="Main">
@@ -21,7 +17,7 @@ class Navigation extends React.Component {
           </div>
           <div className={styles.bottomContainer}>
             <Link to="/" className={styles.logoLink}>
-              <img src={logo} alt="leonard peters consulting" />
+              <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
             <ul className={styles.navigation}>
               {navigationItems.map((item) => (
@@ -41,7 +37,6 @@ class Navigation extends React.Component {
         </nav>
       </div>
     )
-  }
 }
 
 export default Navigation

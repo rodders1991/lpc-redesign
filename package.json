@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.5",
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-react-helmet": "^5.0.0",
@@ -21,6 +25,7 @@
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
+    "react-responsive-carousel": "^3.2.23",
     "reading-time": "^2.0.0-1"
   },
   "devDependencies": {
