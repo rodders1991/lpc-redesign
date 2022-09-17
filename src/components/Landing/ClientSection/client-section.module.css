@@ -1,0 +1,62 @@
+.root {
+  padding: 2rem 0;
+}
+.title {
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  color: #444;
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  max-width: 500px;
+  margin-top: 0;
+}
+
+.quoteContainer {
+  display: flex;
+}
+.quote {
+  color: var(--secondary);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+.leftQuoteIcon {
+  width: 100px;
+  height: 100px;
+  color: var(--secondary);
+  margin-top: -50px;
+}
+
+.rightQuoteIcon {
+  width: 100px;
+  height: 100px;
+  color: var(--secondary);
+  align-self: flex-end;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .textContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+    .quoteContainer {
+        margin: 8rem 0;
+    }
+}

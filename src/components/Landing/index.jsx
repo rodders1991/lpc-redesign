@@ -4,12 +4,14 @@ import Gallery from './Gallery'
 import AboutSection from './AboutSection'
 import ServiceSection from './ServiceSection'
 import ProjectSection from './ProjectSection'
+import ClientSection from './ClientSection'
 
 const Landing = ({
   galleryItems,
   aboutSection,
   serviceSection,
   projectSection,
+  clientSection
 }) => {
   return (
     <>
@@ -17,6 +19,7 @@ const Landing = ({
       <AboutSection aboutSection={aboutSection} />
       <ServiceSection serviceSection={serviceSection} />
       <ProjectSection projectSection={projectSection} />
+      <ClientSection clientSection={clientSection} />
     </>
   )
 }

@@ -2,7 +2,7 @@
     background-color: #eee;
     margin-top: -20px;
     padding-top: 20px;
-
+    padding-bottom: 8rem;
 }
 .title {
     color: var(--primary);
@@ -104,6 +104,9 @@
 }
 
 @media (max-width: 425px) {
+    .root {
+        padding-bottom: 3rem;
+    }
     .textContainer {
         flex-wrap: wrap;
         margin: 0 1rem;

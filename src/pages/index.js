@@ -27,6 +27,10 @@ class RootIndex extends React.Component {
       'props.data.contentfulLandingPage.projectSection'
     )
 
+    const clientSection = get(
+      this,
+      'props.data.contentfulLandingPage.clientSection'
+    )
     return (
       <Layout
         logo={logo}
@@ -38,6 +42,7 @@ class RootIndex extends React.Component {
           aboutSection={aboutSection}
           serviceSection={serviceSection}
           projectSection={projectSection}
+          clientSection={clientSection}
         />
       </Layout>
     )
@@ -107,6 +112,18 @@ export const pageQuery = graphql`
           images {
             gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000)
           }
+        }
+      }
+      clientSection {
+        title
+        heading
+        quote
+        logos {
+          gatsbyImage(
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            width: 1200
+          )
         }
       }
     }
