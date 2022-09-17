@@ -34,7 +34,7 @@
     font-weight: 500;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .root {
         margin-top: 0;
     }
