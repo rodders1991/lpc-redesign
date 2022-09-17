@@ -1,5 +1,6 @@
 .root {
   background-color: var(--primary);
+  margin-top: -20px;
 }
 .container {
   display: flex;
