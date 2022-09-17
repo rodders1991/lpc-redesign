@@ -5,12 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 3;
-}
-.container {
-  max-width: var(--size-max-width);
-  align-items: center;
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--size-gutter);
+  padding: var(--space-2xl) 0;
 }
 
 .topContainer {

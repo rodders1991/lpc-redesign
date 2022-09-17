@@ -5,17 +5,11 @@
   height: 100%;
   top: 0;
 }
-
 .galleryLegend {
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  border-radius: 10px;
   color: white;
-  padding: 10px;
   font-size: 12px;
-  text-align: center;
   text-align: left;
+  margin-top: 18%;
 }
 
 .galleryLegend h1 {
@@ -45,14 +39,7 @@
 }
 
 @media (max-width: 425px) {
-  .galleryLegend h1 {
-    font-size: var(--text-2xl);
-  }
-
-  .galleryLegend h3 {
-    display: none;
-  }
-  .buttonContainer {
+  .root {
     display: none;
   }
 }

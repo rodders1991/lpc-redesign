@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import React from 'react'
 import Layout from '../components/layout'
-import LandingContainer from '../components/LandingContainer/landing-container';
+import Landing from '../components/Landing'
 
 class RootIndex extends React.Component {
   render() {
@@ -12,10 +12,21 @@ class RootIndex extends React.Component {
     )
     const galleryItems = get(this, 'props.data.contentfulLandingPage.gallery')
     const logo = get(this, 'props.data.contentfulLandingPage.logo')
+    const aboutSection = get(
+      this,
+      'props.data.contentfulLandingPage.aboutSection'
+    )
 
     return (
-      <Layout logo={logo} navigation={navigationItems} location={this.props.location}>
-        <LandingContainer galleryItems={galleryItems} />
+      <Layout
+        logo={logo}
+        navigation={navigationItems}
+        location={this.props.location}
+      >
+        <Landing
+          galleryItems={galleryItems}
+          aboutSection={aboutSection}
+        />
       </Layout>
     )
   }
@@ -33,11 +44,7 @@ export const pageQuery = graphql`
         }
       }
       logo {
-        gatsbyImage(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 250
-          )
+        gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 250)
       }
       gallery {
         media {
@@ -52,6 +59,22 @@ export const pageQuery = graphql`
         heading
         subHeading {
           raw
+        }
+      }
+      aboutSection {
+        title
+        heading
+        subHeading {
+          raw
+        }
+        media {
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            placeholder: BLURRED
+            width: 424
+            height: 812
+
+          )
         }
       }
     }

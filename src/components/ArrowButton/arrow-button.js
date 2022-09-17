@@ -9,7 +9,7 @@ const ArrowButton = ({ label, link }) => {
       <div className={styles.iconContainer}>
         <EastIcon className={styles.icon} />
       </div>
-      {label && <h3>{label}</h3>}
+      {label && <h6 className={styles.label}>{label}</h6>}
     </Link>
   )
 }

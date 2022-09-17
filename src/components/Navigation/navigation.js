@@ -4,11 +4,12 @@ import { MdSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { Container } from '@mui/material';
 
 const Navigation = ({ navigation: navigationItems, logo }) => {
     return (
       <div className={styles.root}>
-        <nav role="navigation" className={styles.container} aria-label="Main">
+        <Container maxWidth="xl">
           <div className={styles.topContainer}>
             <button className={styles.callBackButton}>
               Request a call back
@@ -34,7 +35,7 @@ const Navigation = ({ navigation: navigationItems, logo }) => {
               color="white"
             />
           </div>
-        </nav>
+        </Container>
       </div>
     )
 }
