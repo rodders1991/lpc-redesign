@@ -45,8 +45,8 @@
       padding-left: 2rem;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .container {
-      padding: 7rem 2rem 3rem 2rem;
+      padding: 10rem 2rem 5rem;
     }
 }
