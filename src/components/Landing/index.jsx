@@ -5,6 +5,7 @@ import AboutSection from './AboutSection'
 import ServiceSection from './ServiceSection'
 import ProjectSection from './ProjectSection'
 import ClientSection from './ClientSection'
+import ContactSection from './ContactSection'
 
 const Landing = ({
   galleryItems,
@@ -20,6 +21,7 @@ const Landing = ({
       <ServiceSection serviceSection={serviceSection} />
       <ProjectSection projectSection={projectSection} />
       <ClientSection clientSection={clientSection} />
+      <ContactSection />
     </>
   )
 }
