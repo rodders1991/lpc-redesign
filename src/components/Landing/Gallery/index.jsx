@@ -5,13 +5,14 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 
 import * as styles from './gallery.module.css'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import ArrowButton from '../../ArrowButton/arrow-button'
 import { Container } from '@mui/material'
+import { Fade } from "react-awesome-reveal";
+import ArrowButton from '../../ArrowButton/arrow-button'
 
 const Gallery = ({ galleryItems }) => (
   <div className={styles.root}>
     <Carousel
-      // autoPlay
+      autoPlay
       showArrows={false}
       infiniteLoop
       interval={5000}
@@ -25,11 +26,13 @@ const Gallery = ({ galleryItems }) => (
           <GatsbyImage alt="" image={item.media.gatsbyImage} />
           <div className={styles.galleryOverlay}>
             <Container maxWidth="xl" className={styles.galleryLegend}>
-              <h1>{item.heading}</h1>
-              <h3>
-                {documentToPlainTextString(JSON.parse(item.subHeading.raw))}
-              </h3>
-                <ArrowButton link={item.link} label="Read more" />
+            <Fade>
+                <h1>{item.heading}</h1>
+                <h3>
+                  {documentToPlainTextString(JSON.parse(item.subHeading.raw))}
+                </h3>
+                  <ArrowButton link={item.link} label="Read more" />
+            </Fade>
             </Container>
           </div>
         </div>

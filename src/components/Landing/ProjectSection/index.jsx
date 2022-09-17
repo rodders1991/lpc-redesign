@@ -1,12 +1,17 @@
 import { Container } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
+import { Fade, Slide } from 'react-awesome-reveal'
 import { Carousel } from 'react-responsive-carousel'
 import ArrowButton from '../../ArrowButton/arrow-button'
 import * as styles from './project-section.module.css'
 
 const Project = ({ project, right }) => (
-  <div className={right ? `${styles.project} ${styles.projectRight}` : styles.project}>
+  <div
+    className={
+      right ? `${styles.project} ${styles.projectRight}` : styles.project
+    }
+  >
     <Carousel
       showArrows={false}
       infiniteLoop
@@ -60,13 +65,23 @@ const Project = ({ project, right }) => (
 const ProjectSection = ({ projectSection }) => (
   <div className={styles.root}>
     <Container maxWidth="xl">
-      <h3 className={styles.title}>{projectSection.title}</h3>
-      <h1 className={styles.heading}>{projectSection.heading}</h1>
+      <Fade>
+        <h3 className={styles.title}>{projectSection.title}</h3>
+        <h1 className={styles.heading}>{projectSection.heading}</h1>
+      </Fade>
     </Container>
     <div>
-      {projectSection.projects.map((project, index) => (
-        <Project key={project.name} project={project} right={index % 2} />
-      ))}
+      {projectSection.projects.map((project, index) =>
+        index % 2 ? (
+          <Slide>
+            <Project key={project.name} project={project} right={index % 2} />
+          </Slide>
+        ) : (
+          <Slide direction='right'>
+            <Project key={project.name} project={project} right={index % 2} />
+          </Slide>
+        )
+      )}
     </div>
   </div>
 )
