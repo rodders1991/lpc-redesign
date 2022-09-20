@@ -122,7 +122,7 @@ export const pageQuery = graphql`
           gatsbyImage(
             layout: CONSTRAINED
             placeholder: BLURRED
-            width: 1200
+            width: 200
           )
         }
       }

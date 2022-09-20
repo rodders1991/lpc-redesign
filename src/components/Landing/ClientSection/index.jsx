@@ -1,7 +1,8 @@
 import { Container } from '@mui/material'
 import React from 'react'
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
 import * as styles from './client-section.module.css'
+import quote1Img from "./quote1.png";
+import quote2Img from "./quote2.png";
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
 
@@ -13,13 +14,15 @@ const ClientSection = ({ clientSection }) => (
         <div className={styles.textContainer}>
           <h2 className={styles.heading}>{clientSection.heading}</h2>
           <div className={styles.quoteContainer}>
-            <FormatQuoteIcon className={styles.leftQuoteIcon} />
+            <img src={quote1Img} alt="quote 1" className={styles.leftQuoteIcon} />
             <h4 className={styles.quote}>{clientSection.quote}</h4>
-            <FormatQuoteIcon className={styles.rightQuoteIcon} />
+            <img src={quote2Img} alt="quote 2" className={styles.rightQuoteIcon} />
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <GatsbyImage alt="" image={clientSection.logos.gatsbyImage} />
+          {clientSection.logos.map((logo, index) => (
+            <GatsbyImage className={styles.image} key={`client-logo-${index}`} alt="" image={logo.gatsbyImage} />
+          ))}
         </div>
       </Fade>
     </Container>

@@ -13,9 +13,9 @@
 
 .heading {
   color: #444;
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-weight: 300;
-  max-width: 500px;
+  max-width: 570px;
   margin-top: 0;
 }
 
@@ -26,7 +26,7 @@
   color: var(--secondary);
   font-size: var(--text-2xl);
   font-weight: 500;
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 1rem;
 }
 
@@ -42,12 +42,18 @@
   height: 100px;
   color: var(--secondary);
   align-self: flex-end;
+  margin-bottom: 4rem;
 }
 
 .imageContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 3rem 0;
+}
+
+.image {
+  margin: 3rem 1rem;
 }
 
 @media (max-width: 768px) {
@@ -56,7 +62,20 @@
     justify-content: center;
   }
 
-    .quoteContainer {
-        margin: 8rem 0;
-    }
+  .quoteContainer {
+    margin: 8rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .image {
+    margin: 3rem 3rem;
+  }
+
+  .imageContainer {
+    justify-content: center;
+  }
+  .quoteContainer {
+    margin: 3rem 0;
+  }
 }
