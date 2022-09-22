@@ -77,6 +77,41 @@
   gap: var(--space-md);
 }
 
+.boxModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.search {
+  cursor: pointer;
+}
+
+.boxModal input[type=text] {
+  font-family: var(--font-sans);
+  width: 100%;
+  padding: 5px 15px;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #ddd;
+  border: none;
+  font-size: larger;
+}
+
+.boxModal input[type=text]:focus {
+  outline-width: 0;
+}
+
+.boxModal h5 {
+  font-size: x-large;
+  font-weight: 500;
+}
 @media (max-width: 1024px) {
   .navigationItem {
     font-size: var(--text-sm);
