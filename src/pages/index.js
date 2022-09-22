@@ -99,7 +99,7 @@ export const pageQuery = graphql`
         services {
           name
           icon {
-            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 150)
+            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 120)
           }
         }
       }
