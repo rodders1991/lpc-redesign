@@ -112,6 +112,15 @@ export const pageQuery = graphql`
           images {
             gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000)
           }
+          sector
+          contractPeriod
+          meValue
+          architect
+          quantitySurveyor
+          description {
+            raw
+          }
+          shortDescription
         }
       }
       clientSection {
@@ -119,11 +128,7 @@ export const pageQuery = graphql`
         heading
         quote
         logos {
-          gatsbyImage(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 200
-          )
+          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 200)
         }
         testimonials {
           content {

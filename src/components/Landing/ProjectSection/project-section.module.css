@@ -28,6 +28,21 @@
     justify-content: space-between;
 }
 
+.projectTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+  
+.projectTable td, .projectTable th {
+border: 1px solid #ddd;
+padding: 6px;
+}
+
+.projectTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.projectTable tr:hover {background-color: #ddd;}
+
 .textContainer {
     margin: 0 5rem;
     height: 100%;
@@ -54,14 +69,7 @@
 .textContentContainer h2 {
     color: #444;
     font-size: var(--text-3xl);
-    margin-bottom: 0;
-}
-
-.textContentContainer h4 {
-    color: var(--secondary);
-    font-size: var(--text-3xl);
-    margin-top: 0;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
 }
 
 .gallery {

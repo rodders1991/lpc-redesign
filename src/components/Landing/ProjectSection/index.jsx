@@ -1,3 +1,4 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Container } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
@@ -39,24 +40,37 @@ const Project = ({ project, right }) => (
           textColor="#928D88"
           small
         />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <p>{project.shortDescription}</p>
       </div>
       <div className={styles.textContentContainer}>
         <h2>{project.name}</h2>
-        <h4>{project.client}</h4>
-        <p>
-          <strong>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
-          </strong>
-        </p>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum
-        </p>
+        <table className={styles.projectTable}>
+          <tr>
+            <td>Sector</td>
+            <td>{project.sector}</td>
+          </tr>
+          <tr>
+            <td>Contract Period</td>
+            <td>{project.contractPeriod}</td>
+          </tr>
+          <tr>
+            <td>M&E Value</td>
+            <td>{project.meValue}</td>
+          </tr>
+          {project.architect && (
+            <tr>
+              <td>Architect</td>
+              <td>{project.architect}</td>
+            </tr>
+          )}
+          <tr>
+            <td>Quantity Surveyor</td>
+            <td>{project.quantitySurveyor}</td>
+          </tr>
+        </table>
+        <div>
+          {documentToReactComponents(JSON.parse(project.description.raw))}
+        </div>
       </div>
     </div>
   </div>
@@ -77,7 +91,7 @@ const ProjectSection = ({ projectSection }) => (
             <Project key={project.name} project={project} right={index % 2} />
           </Slide>
         ) : (
-          <Slide direction='right'>
+          <Slide direction="right">
             <Project key={project.name} project={project} right={index % 2} />
           </Slide>
         )
