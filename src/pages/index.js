@@ -125,6 +125,12 @@ export const pageQuery = graphql`
             width: 200
           )
         }
+        testimonials {
+          content {
+            content
+          }
+          company
+        }
       }
     }
   }

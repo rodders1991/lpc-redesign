@@ -19,15 +19,29 @@
   margin-top: 0;
 }
 
+.testimonialsContainer {
+  max-width: 330px;
+  height: 300px;
+}
 .quoteContainer {
   display: flex;
 }
 .quote {
   color: var(--secondary);
-  font-size: var(--text-2xl);
+  font-size: var(--space-lg);
   font-weight: 500;
   max-width: 350px;
   margin: 0 1rem;
+  text-align: left;
+}
+
+.quoteCompany {
+  color: var(--secondary);
+  font-size: var(--space-xl);
+  font-weight: bold;
+  text-align: left;
+  margin-left: 3rem;
+  font-style: italic;
 }
 
 .leftQuoteIcon {
@@ -77,5 +91,11 @@
   }
   .quoteContainer {
     margin: 3rem 0;
+  }
+  .leftQuoteIcon {
+    display: none;
+  }
+  .rightQuoteIcon {
+    display: none;
   }
 }
