@@ -128,7 +128,11 @@ export const pageQuery = graphql`
         heading
         quote
         logos {
-          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 200)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            placeholder: BLURRED
+            width: 1000
+          )
         }
         testimonials {
           content {

@@ -3,7 +3,9 @@ import React from 'react'
 import * as styles from './client-section.module.css'
 import quote1Img from './quote1.png'
 import quote2Img from './quote2.png'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
+import { convertToBgImage } from 'gbimage-bridge'
+import BackgroundImage from 'gatsby-background-image'
 import { Fade } from 'react-awesome-reveal'
 import { Carousel } from 'react-responsive-carousel'
 
@@ -31,14 +33,24 @@ const ClientSection = ({ clientSection }) => (
           </div>
         </div>
         <div className={styles.imageContainer}>
-          {clientSection.logos.map((logo, index) => (
-            <GatsbyImage
-              className={styles.image}
-              key={`client-logo-${index}`}
-              alt=""
-              image={logo.gatsbyImage}
-            />
-          ))}
+          {clientSection.logos.map((logo, index) => {
+            const logoImage = getImage(logo)
+            const logoBackgroundImage = convertToBgImage(logoImage)
+            return (
+              <BackgroundImage
+                Tag="section"
+                // Spread bgImage into BackgroundImage:
+                {...logoBackgroundImage}
+                className={styles.image}
+                key={`client-logo-${index}`}
+                style={{
+                  backgroundSize: 'contain',
+                }}
+                preserveStackingContext
+              >
+              </BackgroundImage>
+            )
+          })}
         </div>
       </Fade>
     </Container>
