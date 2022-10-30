@@ -99,7 +99,11 @@ export const pageQuery = graphql`
         services {
           name
           icon {
-            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 120)
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              width: 1000
+            )
           }
         }
       }
@@ -128,11 +132,7 @@ export const pageQuery = graphql`
         heading
         quote
         logos {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 1000
-          )
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, width: 1000)
         }
         testimonials {
           content {

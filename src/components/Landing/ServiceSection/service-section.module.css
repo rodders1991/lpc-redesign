@@ -35,6 +35,10 @@
     font-weight: 500;
 }
 
+.serviceImage {
+    width: 150px;
+    height: 120px;
+}
 @media (max-width: 768px) {
     .root {
         margin-top: 0;
