@@ -1,5 +1,4 @@
 import React from 'react'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
@@ -20,6 +19,7 @@ const Gallery = ({ galleryItems }) => (
       transitionTime={1000}
       useKeyboardArrows
       showThumbs={false}
+      className={styles.carousel}
     >
       {galleryItems.map((item, index) => (
         <div key={`${item.link}-${index}`}>

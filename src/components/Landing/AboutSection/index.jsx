@@ -1,5 +1,4 @@
 import React from 'react'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { getImage } from 'gatsby-plugin-image'
 import { convertToBgImage } from 'gbimage-bridge'
 import BackgroundImage from 'gatsby-background-image'
