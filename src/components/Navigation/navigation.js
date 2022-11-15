@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { MdSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Container, Modal } from '@mui/material'
+import { Container } from '@mui/material'
 
 const Navigation = ({ navigation: navigationItems, logo }) => {
-  const [open, setOpen] = useState();
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <>
       <div className={styles.root}>
@@ -19,7 +15,10 @@ const Navigation = ({ navigation: navigationItems, logo }) => {
             <button className={styles.callBackButton}>
               Request a call back
             </button>
-            <MdSearch className={styles.search} onClick={handleOpen} size={25} color="white" />
+            <div className={styles.searchContainer}>
+              <input type="text" />
+              <MdSearch className={styles.search} size={35} color="white" />
+            </div>
           </div>
           <div className={styles.bottomContainer}>
             <Link to="/" className={styles.logoLink}>
@@ -42,17 +41,6 @@ const Navigation = ({ navigation: navigationItems, logo }) => {
           </div>
         </Container>
       </div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className={styles.boxModal}>
-          <h5>Search</h5>
-          <input type="text" />
-        </div>
-      </Modal>
     </>
   )
 }
