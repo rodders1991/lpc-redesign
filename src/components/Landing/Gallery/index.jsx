@@ -19,7 +19,6 @@ const Gallery = ({ galleryItems }) => (
       transitionTime={1000}
       useKeyboardArrows
       showThumbs={false}
-      className={styles.carousel}
     >
       {galleryItems.map((item, index) => (
         <div key={`${item.link}-${index}`}>
