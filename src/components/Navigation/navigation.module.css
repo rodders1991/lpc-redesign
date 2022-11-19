@@ -76,6 +76,10 @@
   gap: var(--space-md);
 }
 
+.logoLinkBack {
+  margin-top: -40px;
+}
+
 .search {
   cursor: pointer;
 }

@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '@mui/material'
+import { FEATURE_LANDING } from '../constants'
 
 const Navigation = ({ navigation: navigationItems, logo }) => {
   return (
@@ -21,23 +22,28 @@ const Navigation = ({ navigation: navigationItems, logo }) => {
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <Link to="/" className={styles.logoLink}>
+            <Link to="/" className={`${styles.logoLink} ${FEATURE_LANDING ? styles.logoLinkBack : 
+          ""}`}>
               <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
-            <ul className={styles.navigation}>
-              {navigationItems.map((item) => (
-                <li key={item.name} className={styles.navigationItem}>
-                  <Link to={item.link} activeClassName="active">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <GiHamburgerMenu
-              className={styles.hamburgerMenu}
-              size={40}
-              color="white"
-            />
+            {!FEATURE_LANDING && (
+              <ul className={styles.navigation}>
+                {navigationItems.map((item) => (
+                  <li key={item.name} className={styles.navigationItem}>
+                    <Link to={item.link} activeClassName="active">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {!FEATURE_LANDING && (
+              <GiHamburgerMenu
+                className={styles.hamburgerMenu}
+                size={40}
+                color="white"
+              />
+            )}
           </div>
         </Container>
       </div>
