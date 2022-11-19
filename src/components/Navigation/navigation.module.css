@@ -131,6 +131,9 @@
   .bottomContainer {
     align-items: center;
   }
+  .logoLinkBack {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 425px) {
