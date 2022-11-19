@@ -1,13 +1,12 @@
 import React from 'react'
-
-import Container from '../container'
 import logo from "./logo.png"
 import { IoLogoInstagram, IoLogoLinkedin } from "react-icons/io";
 import * as styles from './footer.module.css'
+import { Container } from '@mui/material';
 
 const Footer = () => (
   <div className={styles.root}>
-    <Container as="footer">
+    <Container maxWidth="xl">
       <div className={styles.container}>
         <img className={styles.logo} src={logo} alt="leonard peters consulting" />
         <div className={styles.desktopDiv}>
