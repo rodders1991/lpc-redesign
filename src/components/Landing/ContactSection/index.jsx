@@ -5,7 +5,7 @@ import ArrowButton from '../../ArrowButton/arrow-button'
 import * as styles from './contact-section.module.css'
 
 const ContactSection = () => (
-  <div className={styles.root}>
+  <div id="contact-section" className={styles.root}>
     <Container maxWidth="xl">
       <Fade>
         <h1 className={styles.header}>

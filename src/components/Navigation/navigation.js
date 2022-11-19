@@ -8,12 +8,19 @@ import { Container } from '@mui/material'
 import { FEATURE_LANDING } from '../constants'
 
 const Navigation = ({ navigation: navigationItems, logo }) => {
+
+  const scrollToContact = () => {
+    const element = document.getElementById("contact-section");
+
+    element.scrollIntoView();
+  };
+
   return (
     <>
       <div className={styles.root}>
         <Container maxWidth="xl">
           <div className={styles.topContainer}>
-            <button className={styles.callBackButton}>
+            <button className={styles.callBackButton} onClick={scrollToContact}>
               Request a call back
             </button>
             <div className={styles.searchContainer}>
