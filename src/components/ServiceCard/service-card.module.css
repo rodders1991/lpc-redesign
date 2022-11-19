@@ -1,0 +1,32 @@
+.root {
+    cursor: pointer;
+}
+.service {
+    margin-right: 7rem;
+    margin-bottom: 3rem;
+    width: 170px;
+    height: 250px;
+}
+
+.serviceName {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--text-xl);
+    margin-top: 3rem;
+}
+
+.serviceImage {
+    width: 150px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.serviceText {
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .service {
+        margin: 0 2rem 5rem 2rem;
+    }
+}
