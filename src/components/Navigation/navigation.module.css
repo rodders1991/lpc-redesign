@@ -105,6 +105,30 @@
   outline-width: 0;
 }
 
+.searchDropdown {
+  position: relative;
+  top: -74px;
+  left: 65%;
+  background-color: #f9f9f9;
+  width: 412px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.searchDropdown h3 {
+  margin: 0;
+}
+
+.searchDropdown h4 {
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.searchDropdown h4:hover {
+  color: #888;
+}
+
 @media (max-width: 1024px) {
   .navigationItem {
     font-size: var(--text-sm);

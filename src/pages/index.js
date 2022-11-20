@@ -36,6 +36,7 @@ class RootIndex extends React.Component {
         logo={logo}
         navigation={navigationItems}
         location={this.props.location}
+        projects={projectSection?.projects}
       >
         <Landing
           galleryItems={galleryItems}
@@ -111,6 +112,7 @@ export const pageQuery = graphql`
         title
         heading
         projects {
+          id
           name
           client
           images {

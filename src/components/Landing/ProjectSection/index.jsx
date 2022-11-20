@@ -1,4 +1,4 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Container } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
@@ -9,6 +9,7 @@ import * as styles from './project-section.module.css'
 
 const Project = ({ project, right }) => (
   <div
+    id={project.id}
     className={
       right ? `${styles.project} ${styles.projectRight}` : styles.project
     }
@@ -88,11 +89,11 @@ const ProjectSection = ({ projectSection }) => (
       {projectSection.projects.map((project, index) =>
         index % 2 ? (
           <Slide>
-            <Project key={project.name} project={project} right={index % 2} />
+            <Project key={project.id} project={project} right={index % 2} />
           </Slide>
         ) : (
           <Slide direction="right">
-            <Project key={project.name} project={project} right={index % 2} />
+            <Project key={project.id} project={project} right={index % 2} />
           </Slide>
         )
       )}

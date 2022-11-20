@@ -72,8 +72,8 @@ const TestimonyBlock = ({ testimonials }) => (
     showIndicators={false}
   >
     {testimonials.map(({ content: { content: quote }, company }, index) => (
-      <div>
-        <h4 key={`quote-${index}`} className={styles.quote}>
+      <div key={`quote-${index}`}>
+        <h4 className={styles.quote}>
           {quote}
         </h4>
         <p className={styles.quoteCompany}>- {company}</p>
