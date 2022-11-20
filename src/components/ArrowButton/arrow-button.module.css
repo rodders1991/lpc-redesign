@@ -53,6 +53,14 @@
   text-transform: uppercase;
 }
 
+.button {
+  margin-top: 3rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: var(--font-sans);
+}
+
 @media (max-width: 1024px) {
   .iconContainer {
     height: 30px;

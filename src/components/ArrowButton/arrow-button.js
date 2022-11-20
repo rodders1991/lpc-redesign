@@ -3,9 +3,9 @@ import EastIcon from '@mui/icons-material/East'
 import * as styles from './arrow-button.module.css'
 import { Link } from 'gatsby'
 
-const ArrowButton = ({ label, link, small, textColor, key }) => {
-  return (
-    <Link to={link} className={styles.root}>
+const ArrowButton = ({ label, link, small, textColor, key, submitButton }) => {
+  const content = () => (
+    <>
       <div
         className={
           small
@@ -29,7 +29,18 @@ const ArrowButton = ({ label, link, small, textColor, key }) => {
           {label}
         </h6>
       )}
-    </Link>
+    </>
+  )
+  return (
+    <>
+      {submitButton ? (
+        <button className={styles.button} type='submit'>{content()}</button>
+      ) : (
+        <Link to={link} className={styles.root}>
+          {content()}
+        </Link>
+      )}
+    </>
   )
 }
 
