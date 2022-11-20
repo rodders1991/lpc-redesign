@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { MdSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -10,6 +10,7 @@ import { FEATURE_LANDING } from '../constants'
 const Navigation = ({ navigation: navigationItems, logo, projects }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchedProjects, setSearchedProjects] = useState()
+  const searchReference = useRef();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact-section')
@@ -43,7 +44,7 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
               Request a call back
             </button>
             <div className={styles.searchContainer}>
-              <input type="text" onChange={handleTextChange} />
+              <input ref={searchReference} type="text" onChange={handleTextChange} />
               <MdSearch className={styles.search} size={35} color="white" />
             </div>
           </div>
@@ -77,7 +78,7 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
           </div>
         </Container>
         {searchedProjects && searchedProjects.length > 0 && (
-          <div className={styles.searchDropdown}>
+          <div className={styles.searchDropdown} style={{ left: searchReference.current.offsetLeft }}>
             <h3>Projects</h3>
             {searchedProjects.map((project) => (
               <h4
