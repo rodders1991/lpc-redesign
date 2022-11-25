@@ -99,6 +99,7 @@ export const pageQuery = graphql`
         heading
         services {
           name
+          subTitle
           icon {
             gatsbyImageData(
               layout: FULL_WIDTH

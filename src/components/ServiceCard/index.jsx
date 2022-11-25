@@ -34,9 +34,7 @@ const ServiceCard = ({ service, index }) => {
           <h2 className={styles.serviceName}>{service.name}</h2>
         </div>
         <div className={`${styles.service} ${styles.serviceText}`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-            vehicula orci. Maecenas quis condimentum nisi, eu gravida quam. In
-            tristique neque euismod eleifend varius
+            {service.subTitle}
         </div>
       </ReactCardFlip>
     </div>
