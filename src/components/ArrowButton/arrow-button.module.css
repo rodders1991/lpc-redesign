@@ -1,12 +1,12 @@
 .root {
-  justify-content: center;
+  display: flex;
   align-items: center;
   cursor: pointer;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  min-width: 200px;
+  min-width: 350px;
 }
 
 .root:hover {
@@ -20,7 +20,7 @@
   height: 40px;
   width: 40px;
   background-color: rgb(148, 26, 52);
-  border-radius: 80px;
+  border-radius: 200px;
   float: left;
 }
 

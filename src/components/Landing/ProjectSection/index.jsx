@@ -46,28 +46,36 @@ const Project = ({ project, right }) => (
       <div className={styles.textContentContainer}>
         <h2>{project.name}</h2>
         <table className={styles.projectTable}>
-          <tr>
-            <td>Sector</td>
-            <td>{project.sector}</td>
-          </tr>
-          <tr>
-            <td>Contract Period</td>
-            <td>{project.contractPeriod}</td>
-          </tr>
-          <tr>
-            <td>M&E Value</td>
-            <td>{project.meValue}</td>
-          </tr>
-          {project.architect && (
+          <tbody>
             <tr>
-              <td>Architect</td>
-              <td>{project.architect}</td>
+              <td>Sector</td>
+              <td>{project.sector}</td>
             </tr>
-          )}
-          <tr>
-            <td>Quantity Surveyor</td>
-            <td>{project.quantitySurveyor}</td>
-          </tr>
+            {project.contractPeriod && (
+              <tr>
+                <td>Contract Period</td>
+                <td>{project.contractPeriod}</td>
+              </tr>
+            )}
+            {project.meValue && (
+              <tr>
+                <td>M&E Value</td>
+                <td>{project.meValue}</td>
+              </tr>
+            )}
+            {project.architect && (
+              <tr>
+                <td>Architect</td>
+                <td>{project.architect}</td>
+              </tr>
+            )}
+            {project.quantitySurveyor && (
+              <tr>
+                <td>Quantity Surveyor</td>
+                <td>{project.quantitySurveyor}</td>
+              </tr>
+            )}
+          </tbody>
         </table>
         <div>
           {documentToReactComponents(JSON.parse(project.description.raw))}
