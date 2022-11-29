@@ -36,7 +36,7 @@ const Project = ({ project, right }) => (
     <div className={styles.textContainer}>
       <div className={styles.buttonContainer}>
         <ArrowButton
-          link="/projects"
+          link="/"
           label={project.name}
           textColor="#928D88"
           small

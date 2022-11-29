@@ -7,6 +7,7 @@ import * as styles from './about-section.module.css'
 import { Container } from '@mui/material'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import ArrowButton from '../../ArrowButton/arrow-button'
+import { FEATURE_LANDING } from '../../constants';
 
 const AboutSection = ({ aboutSection }) => {
   const aboutSectionImage = getImage(aboutSection.media)
@@ -27,7 +28,7 @@ const AboutSection = ({ aboutSection }) => {
                 <h3 className={styles.subHeading}>
                     {documentToPlainTextString(JSON.parse(aboutSection.subHeading.raw))}
                 </h3>
-                <ArrowButton label="Read more" link="/about" />
+                {!FEATURE_LANDING && <ArrowButton label="Read more" link="/about" />}
             </Slide>
         </Container>
       </BackgroundImage>

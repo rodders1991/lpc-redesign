@@ -33,7 +33,7 @@ const ServiceCard = ({ service, index }) => {
           ></BackgroundImage>
           <h2 className={styles.serviceName}>{service.name}</h2>
         </div>
-        <div className={`${styles.service} ${styles.serviceText}`}>
+        <div className={styles.service}>
             {service.subTitle}
         </div>
       </ReactCardFlip>

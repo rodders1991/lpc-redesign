@@ -22,9 +22,6 @@
     margin: 0 auto;
 }
 
-.serviceText {
-    text-align: center;
-}
 @media (max-width: 768px) {
     .service {
         margin: 0 2rem 5rem 2rem;
