@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
-import { MdSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
@@ -44,8 +43,7 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
               Request a call back
             </button>
             <div className={styles.searchContainer}>
-              <input ref={searchReference} type="text" onChange={handleTextChange} />
-              <MdSearch className={styles.search} size={35} color="white" />
+              <input placeholder='search' ref={searchReference} type="text" onChange={handleTextChange} />
             </div>
           </div>
           <div className={styles.bottomContainer}>

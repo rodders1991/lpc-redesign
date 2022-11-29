@@ -65,6 +65,7 @@ export const pageQuery = graphql`
         gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 250)
       }
       gallery {
+        id
         media {
           gatsbyImage(
             layout: FULL_WIDTH
@@ -73,10 +74,12 @@ export const pageQuery = graphql`
             height: 212
           )
         }
-        link
         heading
         subHeading {
           raw
+        }
+        relatedProject {
+          id
         }
       }
       aboutSection {

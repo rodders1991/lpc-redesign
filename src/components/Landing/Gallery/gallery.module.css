@@ -13,7 +13,7 @@
 }
 
 .galleryLegend h1 {
-  width: 300px;
+  width: 500px;
   font-size: var(--text-6xl);
   font-weight: 500;
   margin-bottom: 0rem;
@@ -21,8 +21,8 @@
 }
 
 .galleryLegend h3 {
-  width: 450px;
-  font-size: var(--text-2xl);
+  width: 500px;
+  font-size: var(--text-3xl);
   margin-top: 0rem;
   padding-top: 0rem;
   font-weight: 500;
@@ -39,6 +39,12 @@
 }
 
 @media (max-width: 768px) {
+  .galleryLegend h1 {
+    width: auto;
+  }
+  .galleryLegend h3 {
+    width: auto;
+  }
   .root {
     display: none;
   }

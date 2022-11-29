@@ -20,22 +20,26 @@ const Gallery = ({ galleryItems }) => (
       useKeyboardArrows
       showThumbs={false}
     >
-      {galleryItems.map((item, index) => (
-        <div key={`${item.link}-${index}`}>
-          <GatsbyImage alt="" image={item.media.gatsbyImage} />
-          <div className={styles.galleryOverlay}>
-            <Container maxWidth="xl" className={styles.galleryLegend}>
-            <Fade>
-                <h1>{item.heading}</h1>
-                <h3>
-                  {documentToPlainTextString(JSON.parse(item.subHeading.raw))}
-                </h3>
-                  <ArrowButton link={item.link} label="Read more" />
-            </Fade>
-            </Container>
+      {galleryItems.map((item, index) => {
+        const link = item.link || item.relatedProject?.id ? `#${item.relatedProject?.id}` : null;
+
+        return (
+          <div key={`${item.id}-${index}`}>
+            <GatsbyImage alt="" image={item.media.gatsbyImage} />
+            <div className={styles.galleryOverlay}>
+              <Container maxWidth="xl" className={styles.galleryLegend}>
+                <Fade>
+                  <h1>{item.heading}</h1>
+                  <h3>
+                    {documentToPlainTextString(JSON.parse(item.subHeading.raw))}
+                  </h3>
+                  {link && <ArrowButton link={link} label="Read more" />}
+                </Fade>
+              </Container>
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
     </Carousel>
   </div>
 )
