@@ -22,6 +22,11 @@
     margin: 0 auto;
 }
 
+.serviceRight {
+    display: block;
+    width: 150px;
+}
+
 @media (max-width: 768px) {
     .service {
         margin: 0 2rem 5rem 2rem;

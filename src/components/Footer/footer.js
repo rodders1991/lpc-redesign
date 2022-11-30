@@ -19,7 +19,7 @@ const Footer = () => (
           <small>EC2M 5SQ</small>
         </div>
         <div className={styles.desktopDiv}>
-          <small>info@l-p-c.com</small>
+          <small>inbox@l-p-c.com</small>
           {/* <small>+44 000 000 0000</small> */}
         </div>
         <div className={styles.desktopDiv}>

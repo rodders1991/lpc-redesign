@@ -34,7 +34,9 @@ const ServiceCard = ({ service, index }) => {
           <h2 className={styles.serviceName}>{service.name}</h2>
         </div>
         <div className={styles.service}>
+          <span className={styles.serviceRight}>
             {service.subTitle}
+          </span>
         </div>
       </ReactCardFlip>
     </div>
