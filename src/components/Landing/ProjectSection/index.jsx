@@ -22,6 +22,7 @@ const Project = ({ project, right }) => (
       transitionTime={1000}
       useKeyboardArrows
       showThumbs={false}
+      showIndicators={project.images.length > 1}
       className={styles.gallery}
     >
       {project.images.map((image, index) => (
