@@ -81,6 +81,8 @@ export const pageQuery = graphql`
         relatedProject {
           id
         }
+        headerColour
+        noOverlay
       }
       aboutSection {
         title

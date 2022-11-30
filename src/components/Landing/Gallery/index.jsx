@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import * as styles from './gallery.module.css'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { Container } from '@mui/material'
-import { Fade } from "react-awesome-reveal";
+import { Fade } from 'react-awesome-reveal'
 import ArrowButton from '../../ArrowButton/arrow-button'
 
 const Gallery = ({ galleryItems }) => (
@@ -21,15 +21,30 @@ const Gallery = ({ galleryItems }) => (
       showThumbs={false}
     >
       {galleryItems.map((item, index) => {
-        const link = item.link || item.relatedProject?.id ? `#${item.relatedProject?.id}` : null;
+        const link =
+          item.link || item.relatedProject?.id
+            ? `#${item.relatedProject?.id}`
+            : null
 
         return (
           <div key={`${item.id}-${index}`}>
             <GatsbyImage alt="" image={item.media.gatsbyImage} />
-            <div className={styles.galleryOverlay}>
+            <div
+              className={`${styles.galleryOverlay} ${
+                item.noOverlay ? styles.noOverlay : ''
+              }`}
+            >
               <Container maxWidth="xl" className={styles.galleryLegend}>
                 <Fade>
-                  <h1>{item.heading}</h1>
+                  <h1
+                    style={{
+                      ...(item.headerColour
+                        ? { color: item.headerColour }
+                        : {}),
+                    }}
+                  >
+                    {item.heading}
+                  </h1>
                   <h3>
                     {documentToPlainTextString(JSON.parse(item.subHeading.raw))}
                   </h3>

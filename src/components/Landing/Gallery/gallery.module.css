@@ -5,6 +5,11 @@
   height: 100%;
   top: 0;
 }
+
+.noOverlay {
+  background-color: transparent;
+}
+
 .galleryLegend {
   color: white;
   font-size: 12px;
