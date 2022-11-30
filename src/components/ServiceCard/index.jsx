@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { getImage } from 'gatsby-plugin-image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { convertToBgImage } from 'gbimage-bridge'
 import BackgroundImage from 'gatsby-background-image'
 import * as styles from './service-card.module.css'
@@ -10,6 +11,8 @@ const ServiceCard = ({ service, index }) => {
 
   const serviceImage = getImage(service.icon)
   const serviceBackgroundImage = convertToBgImage(serviceImage)
+  console.log(service.flipText);
+
   return (
     <div
       role="presentation"
@@ -35,7 +38,7 @@ const ServiceCard = ({ service, index }) => {
         </div>
         <div className={styles.service}>
           <span className={styles.serviceRight}>
-            {service.subTitle}
+          {documentToReactComponents(JSON.parse(service.flipText.raw))}
           </span>
         </div>
       </ReactCardFlip>
