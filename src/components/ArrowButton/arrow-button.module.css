@@ -60,6 +60,7 @@
   border: none;
   color: white;
   font-family: var(--font-sans);
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {

@@ -22,6 +22,15 @@
   display: block;
 }
 
+.socialIcon {
+  cursor: pointer;
+  color: white;
+}
+
+.socialIcon:hover {
+  color: #eee;
+}
+
 @media (max-width: 768px) {
   .desktopDiv {
     display: none;
