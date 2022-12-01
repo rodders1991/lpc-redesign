@@ -17,8 +17,7 @@ const ServiceCard = ({ service, index }) => {
       className={styles.root}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onTouchStart={() => setIsFlipped(true)}
-      onTouchEnd={() => setIsFlipped(false)}
+      onTouchEnd={() => (prevState) => setIsFlipped(!prevState)}
     >
       <ReactCardFlip isFlipped={isFlipped}>
         <div key={service.name} className={styles.service}>
