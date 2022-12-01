@@ -32,6 +32,9 @@
     margin: 0;
 }
 @media (max-width: 768px) {
+    .serviceName {
+        margin-left: 2rem;
+    }
     .service {
         margin: 0 2rem 5rem 2rem;
     }
