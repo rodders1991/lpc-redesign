@@ -106,18 +106,28 @@ padding: 6px;
     .project {
         flex-wrap: wrap;
     }
-    .projectRight {
+    .buttonContainer {
+        margin-right: none;
+    }
+    .buttonContainer p {
+        display: none;
+    }
+    .projectTable {
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+    .textContentContainer {
+        max-width: 300px;
+    }
+    .textContainer {
         flex-wrap: wrap;
+        margin: 0 1rem;
     }
 }
 
 @media (max-width: 425px) {
     .root {
         padding-bottom: 3rem;
-    }
-    .textContainer {
-        flex-wrap: wrap;
-        margin: 0 1rem;
     }
     .buttonContainer p {
         display: none;

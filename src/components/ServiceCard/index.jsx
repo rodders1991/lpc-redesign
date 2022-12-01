@@ -11,15 +11,14 @@ const ServiceCard = ({ service, index }) => {
 
   const serviceImage = getImage(service.icon)
   const serviceBackgroundImage = convertToBgImage(serviceImage)
-  console.log(service.flipText);
-
   return (
     <div
       role="presentation"
       className={styles.root}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onClick={() => setIsFlipped((prevState) => !prevState)}
+      onTouchStart={() => setIsFlipped(true)}
+      onTouchEnd={() => setIsFlipped(false)}
     >
       <ReactCardFlip isFlipped={isFlipped}>
         <div key={service.name} className={styles.service}>
