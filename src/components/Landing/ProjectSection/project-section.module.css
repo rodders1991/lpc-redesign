@@ -123,9 +123,9 @@ padding: 6px;
         flex-wrap: wrap;
         margin: 0 1rem;
     }
-}
-
-@media (max-width: 425px) {
+    .buttonContainer {
+        margin-right: 0rem;
+    }
     .root {
         padding-bottom: 3rem;
     }
