@@ -11,7 +11,7 @@ import ArrowButton from '../../ArrowButton/arrow-button'
 const Gallery = ({ galleryItems }) => (
   <div className={styles.root}>
     <Carousel
-      autoPlay
+      // autoPlay
       showArrows={false}
       infiniteLoop
       interval={5000}
@@ -19,6 +19,7 @@ const Gallery = ({ galleryItems }) => (
       transitionTime={1000}
       useKeyboardArrows
       showThumbs={false}
+      className={styles.carousel}
     >
       {galleryItems.map((item, index) => {
         const link =
@@ -28,7 +29,7 @@ const Gallery = ({ galleryItems }) => (
 
         return (
           <div key={`${item.id}-${index}`}>
-            <GatsbyImage alt="" image={item.media.gatsbyImage} />
+            <GatsbyImage className={styles.carouselImage} alt="" image={item.media.gatsbyImage} />
             <div
               className={`${styles.galleryOverlay} ${
                 item.noOverlay ? styles.noOverlay : ''

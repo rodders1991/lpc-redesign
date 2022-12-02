@@ -45,12 +45,10 @@
 
 @media (max-width: 768px) {
   .galleryLegend h1 {
+    margin-top: 8rem;
     width: auto;
   }
-  .galleryLegend h3 {
-    width: auto;
-  }
-  .root {
-    display: none;
+  .carouselImage {
+    height: 40vh;
   }
 }
