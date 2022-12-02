@@ -136,9 +136,6 @@
   .callBackButton {
     font-size: var(--text-md);
   }
-  .logoLink img {
-    width: 170px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -160,10 +157,6 @@
 }
 
 @media (max-width: 425px) {
-  .logoLink img {
-    width: 120px;
-  }
-
   .hamburgerMenu {
     width: 30px;
   }

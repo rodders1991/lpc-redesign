@@ -9,9 +9,9 @@ import { Fade } from 'react-awesome-reveal'
 import ArrowButton from '../../ArrowButton/arrow-button'
 
 const Gallery = ({ galleryItems }) => (
-  <div className={styles.root}>
+  <div>
     <Carousel
-      // autoPlay
+      autoPlay
       showArrows={false}
       infiniteLoop
       interval={5000}
@@ -19,7 +19,6 @@ const Gallery = ({ galleryItems }) => (
       transitionTime={1000}
       useKeyboardArrows
       showThumbs={false}
-      className={styles.carousel}
     >
       {galleryItems.map((item, index) => {
         const link =
