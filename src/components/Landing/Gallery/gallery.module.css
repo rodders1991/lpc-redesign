@@ -51,4 +51,7 @@
   .carouselImage {
     height: 27rem;
   }
+  .galleryLegend h3 {
+    width: auto;
+  }
 }
