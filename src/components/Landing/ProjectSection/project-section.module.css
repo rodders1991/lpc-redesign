@@ -116,6 +116,9 @@ padding: 6px;
         width: 100%;
         margin-bottom: 0rem;
     }
+    .textContainer {
+        margin: 0;
+    }
     .textContentContainer {
         max-width: 300px;
     }
