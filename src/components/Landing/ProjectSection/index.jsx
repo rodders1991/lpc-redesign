@@ -97,11 +97,11 @@ const ProjectSection = ({ projectSection }) => (
     <div>
       {projectSection.projects.map((project, index) =>
         index % 2 ? (
-          <Slide>
+          <Slide key={project.id}>
             <Project key={project.id} project={project} right={index % 2} />
           </Slide>
         ) : (
-          <Slide direction="right">
+          <Slide direction="right" key={project.id}>
             <Project key={project.id} project={project} right={index % 2} />
           </Slide>
         )
