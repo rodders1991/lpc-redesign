@@ -7,12 +7,17 @@ import Navigation from './Navigation/navigation'
 import Footer from './Footer/footer'
 class Template extends React.Component {
   render() {
-    const { children, navigation, logo, projects } = this.props
+    const { children, navigation, logo, projects, navigationStatic } = this.props
 
     return (
       <>
         <Seo />
-        <Navigation logo={logo} navigation={navigation} projects={projects} />
+        <Navigation
+          logo={logo}
+          navigation={navigation}
+          projects={projects}
+          staticStyle={navigationStatic}
+        />
         <main>{children}</main>
         <Footer />
       </>

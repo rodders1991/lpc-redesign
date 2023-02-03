@@ -4,9 +4,8 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '@mui/material'
-import { FEATURE_LANDING } from '../constants'
 
-const Navigation = ({ navigation: navigationItems, logo, projects }) => {
+const Navigation = ({ navigation: navigationItems, logo, projects, staticStyle }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchedProjects, setSearchedProjects] = useState()
   const searchReference = useRef();
@@ -36,7 +35,7 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
 
   return (
     <>
-      <div className={styles.root}>
+      <div className={staticStyle ? `${styles.root} ${styles.rootStatic}` : styles.root}>
         <Container maxWidth="xl">
           <div className={styles.topContainer}>
             <button className={styles.callBackButton} onClick={scrollToContact}>
@@ -49,13 +48,10 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
           <div className={styles.bottomContainer}>
             <Link
               to="/"
-              className={`${styles.logoLink} ${
-                FEATURE_LANDING ? styles.logoLinkBack : ''
-              }`}
+              className={styles.logoLink}
             >
               <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
-            {!FEATURE_LANDING && (
               <ul className={styles.navigation}>
                 {navigationItems.map((item) => (
                   <li key={item.name} className={styles.navigationItem}>
@@ -65,14 +61,11 @@ const Navigation = ({ navigation: navigationItems, logo, projects }) => {
                   </li>
                 ))}
               </ul>
-            )}
-            {!FEATURE_LANDING && (
               <GiHamburgerMenu
                 className={styles.hamburgerMenu}
                 size={40}
                 color="white"
               />
-            )}
           </div>
         </Container>
         {searchedProjects && searchedProjects.length > 0 && (

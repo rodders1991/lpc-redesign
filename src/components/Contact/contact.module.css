@@ -1,0 +1,59 @@
+.root {
+  /* TODO: This is a hack to remove the white space above, should look into fixing this if I have the time */
+  margin-top: -20px;
+  width: 100%;
+  color: white;
+}
+
+.container {
+  padding: 25rem 0 10rem 0;
+  /* height: 100vh; */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.containerInside {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.title {
+  font-size: var(--text-5xl);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.subTitle {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  max-width: 500px;
+}
+
+.calendarContainer {
+  width: 600px;
+  height: 500px;
+}
+
+@media (max-width: 1024px) {
+  .subTitle {
+    max-width: 400px;
+  }
+  .calendarContainer {
+    width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerInside {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .subTitle {
+    max-width: 800px;
+  }
+  .calendarContainer {
+    width: 80%;
+    margin-top: 2rem;
+  }
+  .container {
+    padding: 10rem 0 10rem 0;
+  }
+}

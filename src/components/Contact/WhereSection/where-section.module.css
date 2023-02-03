@@ -1,0 +1,48 @@
+.root {
+    margin-top: -20px;
+    /* padding-top: 20px; */
+    padding-bottom: 8rem;
+}
+.title {
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.map {
+    width: 700px;
+    height: 500px;
+}
+
+.textContainer {
+    margin-top: 50%;
+    margin-left: 7rem;
+}
+
+.textContainer h3 {
+    font-weight: 500;
+}
+
+.phoneContainer {
+    display: flex;
+    align-content: flex-end;
+    color: var(--accent);
+}
+.phoneContainer svg {
+    margin-right: 0.5rem;
+}
+@media (max-width: 768px) {
+    .root {
+        padding-bottom: 3rem;
+    }
+    .textContainer {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+}

@@ -8,6 +8,10 @@
   padding: var(--space-2xl) 0;
 }
 
+.rootStatic {
+  position: static;
+}
+
 .topContainer {
   float: right;
   display: flex;
@@ -74,10 +78,6 @@
   flex-direction: row;
   flex-shrink: 0;
   gap: var(--space-md);
-}
-
-.logoLinkBack {
-  margin-top: -40px;
 }
 
 .search {

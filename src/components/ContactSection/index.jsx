@@ -1,12 +1,21 @@
 import { Container } from '@mui/material'
 import React from 'react'
 import { Fade } from 'react-awesome-reveal'
-import { GoogleReCaptcha, GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
-import ArrowButton from '../../ArrowButton/arrow-button'
+import {
+  GoogleReCaptcha,
+  GoogleReCaptchaProvider,
+} from 'react-google-recaptcha-v3'
+import ArrowButton from '../ArrowButton/arrow-button'
 import * as styles from './contact-section.module.css'
 
 const ContactSection = () => (
-  <GoogleReCaptchaProvider reCaptchaKey="6LfKP-cjAAAAAHUVupnRN0-e_tMSMjKrwUcqOJ0m">
+  <GoogleReCaptchaProvider
+    reCaptchaKey="6LfKP-cjAAAAAHUVupnRN0-e_tMSMjKrwUcqOJ0m"
+    container={{
+      element: '#contact-section',
+      parameters: { badge: 'bottomright' },
+    }}
+  >
     <div id="contact-section" className={styles.root}>
       <Container maxWidth="xl">
         <Fade>
@@ -43,7 +52,7 @@ const ContactSection = () => (
               </div>
               <GoogleReCaptcha
                 onVerify={(token) => {
-                  document.getElementById('captchaResponse').value = token;
+                  document.getElementById('captchaResponse').value = token
                 }}
               />
               <div className={styles.formGroup}>
