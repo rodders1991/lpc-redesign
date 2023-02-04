@@ -1,0 +1,65 @@
+.title {
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  margin-top: 40px;
+  font-size: var(--text-2xl);
+}
+
+.teamRoot {
+  background-color: #eee;
+}
+
+.teamRootContainer {
+  padding: 4rem 0;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.employee {
+  color: #444;
+  width: 400px;
+}
+
+.employeeImg {
+  height: 300px;
+  width: 100%;
+}
+
+.employeeTitle {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.employeeRole {
+  font-size: var(--text-lg);
+  margin-top: 0;
+}
+
+.employeeAbout {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: #bbb solid 1px;
+}
+
+@media (max-width: 768px) {
+  .teamRootContainer {
+    justify-content: center;
+  }
+
+  .employee {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .employee {
+    width: 300px;
+  }
+  .teamRootContainer {
+    padding: 0;
+  }
+}
