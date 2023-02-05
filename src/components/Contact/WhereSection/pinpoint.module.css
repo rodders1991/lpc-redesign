@@ -1,0 +1,37 @@
+.pointContainer {
+  position: absolute;
+}
+
+.pinpoint {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 30px;
+  border-bottom-right-radius: 0;
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+}
+
+@-moz-keyframes bounce {
+  0%,
+  100% {
+    margin: 30px 0 0 0;
+  }
+  50% {
+    margin: 50px 0 0 0;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    margin: 30px 0 0 0;
+  }
+  50% {
+    margin: 50px 0 0 0;
+  }
+}

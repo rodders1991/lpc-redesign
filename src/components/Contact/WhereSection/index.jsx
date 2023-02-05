@@ -4,6 +4,8 @@ import { Fade } from 'react-awesome-reveal'
 import GoogleMapReact from 'google-map-react'
 import { Phone } from '@mui/icons-material'
 import * as styles from './where-section.module.css'
+import mapStyles from './map-styles'
+import PinPoint from './pinpoint'
 
 const WhereSection = () => {
   const defaultProps = {
@@ -28,7 +30,13 @@ const WhereSection = () => {
                   }}
                   defaultCenter={defaultProps.center}
                   defaultZoom={defaultProps.zoom}
+                  options={{ styles: mapStyles }}
                 >
+                  <PinPoint
+                    text="test"
+                    lat={defaultProps.center.lat}
+                    lng={defaultProps.center.lng}
+                  />
                 </GoogleMapReact>
               </div>
               <div>

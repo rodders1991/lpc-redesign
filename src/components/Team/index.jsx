@@ -5,8 +5,9 @@ import ContactSection from '../ContactSection'
 import { Container } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
+import { IoLogoInstagram } from 'react-icons/io'
 
-const Employee = ({ employee: { name, image, role, about } }) => (
+const Employee = ({ employee: { name, image, role, about, linkedIn } }) => (
   <div className={styles.employee}>
     <GatsbyImage
       alt=""
@@ -14,8 +15,17 @@ const Employee = ({ employee: { name, image, role, about } }) => (
       objectFit="contain"
       className={styles.employeeImg}
     />
-    <h3 className={styles.employeeTitle}>{name}</h3>
-    <p className={styles.employeeRole}>{role}</p>
+    <div className={styles.employeeTopTextContainer}>
+      <div>
+        <h3 className={styles.employeeTitle}>{name}</h3>
+        <p className={styles.employeeRole}>{role}</p>
+      </div>
+      <IoLogoInstagram
+        className={styles.employeeSocialIcon}
+        size={40}
+        onClick={() => window.open(linkedIn, '_blank')}
+      />
+    </div>
     <p className={styles.employeeAbout}>{about.about}</p>
   </div>
 )

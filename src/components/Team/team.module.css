@@ -39,6 +39,18 @@
   margin-top: 0;
 }
 
+.employeeTopTextContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.employeeSocialIcon {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.employeeSocialIcon:hover {
+  color: #aaa;
+}
+
 .employeeAbout {
   margin-top: 0.5rem;
   padding-top: 1rem;
@@ -61,5 +73,11 @@
   }
   .teamRootContainer {
     padding: 0;
+  }
+  .employeeTitle {
+    margin-top: 0;
+  }
+  .employeeSocialIcon {
+    margin-top: 0;
   }
 }

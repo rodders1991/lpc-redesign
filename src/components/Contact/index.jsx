@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as styles from './contact.module.css'
 
 import ContactSection from '../ContactSection'
@@ -6,13 +6,34 @@ import { Container } from '@mui/material'
 import { InlineWidget } from 'react-calendly'
 import { convertToBgImage } from 'gbimage-bridge'
 import BackgroundImage from 'gatsby-background-image'
-import { getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import WhereSection from './WhereSection'
 
-const Contact = ({ banner }) => {
+const MeetingEmployee = ({ employee, handleBookClick }) => (
+  <div className={styles.employee}>
+    <GatsbyImage
+      alt=""
+      image={employee.image.gatsbyImage}
+      objectFit="contain"
+      className={styles.employeeImg}
+    />
+    <div className={styles.employeeTextContainer}>
+      <h3 className={styles.employeeTitle}>{employee.name}</h3>
+      <p className={styles.employeeRole}>{employee.role}</p>
+      <input
+        className={styles.employeeBookButton}
+        type="button"
+        value={`Book with ${employee?.name.split(' ')[0]}`}
+        onClick={handleBookClick}
+      />
+    </div>
+  </div>
+)
+
+const Contact = ({ banner, meetingEmployees }) => {
   const bannerImage = getImage(banner)
   const bannerBackgroundImage = convertToBgImage(bannerImage)
-
+  const [showCalendar, setShowCalendar] = useState(false)
   return (
     <>
       <div className={styles.root}>
@@ -35,7 +56,28 @@ const Contact = ({ banner }) => {
                   </h3>
                 </div>
                 <div className={styles.calendarContainer}>
-                  <InlineWidget url="https://calendly.com/georgeormrod" />
+                  {!showCalendar && (
+                    <div>
+                      {meetingEmployees.map((employee) => (
+                        <MeetingEmployee
+                          key={employee.name}
+                          employee={employee}
+                          handleBookClick={() => setShowCalendar(true)}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  {showCalendar && (
+                    <>
+                      <input
+                        className={styles.employeeBookButton}
+                        type="button"
+                        value={`< Book with someone else`}
+                        onClick={() => setShowCalendar(false)}
+                      />
+                      <InlineWidget url="https://calendly.com/georgeormrod" />
+                    </>
+                  )}
                 </div>
               </div>
             </Container>
