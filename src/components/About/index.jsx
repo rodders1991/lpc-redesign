@@ -24,15 +24,22 @@ const About = ({ banner, subtitle }) => {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
             sem non ipsum lacinia tincidunt. Aenean dictum eros ac orci
-            tristique, nec imperdiet elit sagittis. In hac habitasse platea
-            dictumst. Vestibulum vitae sagittis ante. Sed quis fermentum nibh.
-            Suspendisse eu volutpat ex, vel maximus tortor. Etiam et lorem
-            libero. Aliquam erat volutpat. Aliquam viverra nisl ut velit
-            malesuada interdum. Ut porta eros porta massa venenatis, ac ultrices
-            sem euismod. Donec sapien nisl, interdum vitae lacus vel, volutpat
-            porttitor purus. Suspendisse eget condimentum odio, non tincidunt
-            nisl. Fusce varius orci elit, eu rhoncus nisi mattis vitae. Aliquam
-            suscipit, arcu et mollis lacinia, magna nisi bibendum quam,
+            tristique, nec imperdiet elit sagittis.
+            <br />
+            <br />
+            In hac habitasse platea dictumst. Vestibulum vitae sagittis ante.
+            Sed quis fermentum nibh. Suspendisse eu volutpat ex, vel maximus
+            tortor. Etiam et lorem libero. Aliquam erat volutpat.
+            <br />
+            <br />
+            Aliquam viverra nisl ut velit malesuada interdum. Ut porta eros
+            porta massa venenatis, ac ultrices sem euismod. Donec sapien nisl,
+            interdum vitae lacus vel, volutpat porttitor purus. Suspendisse eget
+            condimentum odio, non tincidunt nisl. Fusce varius orci elit, eu
+            rhoncus nisi mattis vitae.
+            <br />
+            <br />
+            Aliquam suscipit, arcu et mollis lacinia, magna nisi bibendum quam,
             venenatis posuere nulla risus a magna. Aliquam placerat sed magna
             sit amet semper. Praesent id nibh tortor.
           </p>
