@@ -12,11 +12,12 @@ class AboutPage extends React.Component {
       'props.data.contentfulAboutPage.navigation.items'
     )
 
-    const banner = get(this, 'props.data.contentfulAboutPage.banner')
     const subtitle = get(
       this,
       'props.data.contentfulAboutPage.subtitle.subtitle'
     )
+
+    const sections = get(this, 'props.data.contentfulAboutPage.sections')
 
     return (
       <Layout
@@ -26,7 +27,10 @@ class AboutPage extends React.Component {
         projects={{}}
         navigationStatic
       >
-        <About banner={banner} subtitle={subtitle} />
+        <About
+          subtitle={subtitle}
+          sections={sections}
+        />
       </Layout>
     )
   }
@@ -46,11 +50,17 @@ export const pageQuery = graphql`
       logo {
         gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 250)
       }
-      banner {
-        gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000)
-      }
       subtitle {
         subtitle
+      }
+      sections {
+        header
+        content {
+          raw
+        }
+        image {
+          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000)
+        }
       }
     }
   }

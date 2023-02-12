@@ -2,10 +2,32 @@ import React from 'react'
 import * as styles from './about.module.css'
 
 import ContactSection from '../ContactSection'
-import { Container } from '@mui/material'
+import { Container, Slide } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const About = ({ banner, subtitle }) => {
+const Section = ({ section, right }) => (
+  <div
+    id={section.id}
+    className={
+      right ? `${styles.section} ${styles.sectionRight}` : styles.section
+    }
+  >
+    <div className={styles.imageContainer}>
+      <GatsbyImage
+        alt=""
+        image={section.image.gatsbyImage}
+        className={styles.image}
+      />
+    </div>
+    <div className={styles.textContainer}>
+      <h2>{section.header}</h2>
+      <div>{documentToReactComponents(JSON.parse(section.content.raw))}</div>
+    </div>
+  </div>
+)
+
+const About = ({ subtitle, sections }) => {
   return (
     <>
       <div>
@@ -13,37 +35,19 @@ const About = ({ banner, subtitle }) => {
           <h1 className={styles.title}>About us</h1>
           <p className={styles.subtitle}>{subtitle}</p>
         </Container>
-        <div className={styles.content}>
-          <div className={styles.imageContainer}>
-            <GatsbyImage
-              alt=""
-              image={banner.gatsbyImage}
-              className={styles.image}
-            />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
-            sem non ipsum lacinia tincidunt. Aenean dictum eros ac orci
-            tristique, nec imperdiet elit sagittis.
-            <br />
-            <br />
-            In hac habitasse platea dictumst. Vestibulum vitae sagittis ante.
-            Sed quis fermentum nibh. Suspendisse eu volutpat ex, vel maximus
-            tortor. Etiam et lorem libero. Aliquam erat volutpat.
-            <br />
-            <br />
-            Aliquam viverra nisl ut velit malesuada interdum. Ut porta eros
-            porta massa venenatis, ac ultrices sem euismod. Donec sapien nisl,
-            interdum vitae lacus vel, volutpat porttitor purus. Suspendisse eget
-            condimentum odio, non tincidunt nisl. Fusce varius orci elit, eu
-            rhoncus nisi mattis vitae.
-            <br />
-            <br />
-            Aliquam suscipit, arcu et mollis lacinia, magna nisi bibendum quam,
-            venenatis posuere nulla risus a magna. Aliquam placerat sed magna
-            sit amet semper. Praesent id nibh tortor.
-          </p>
-        </div>
+        {/* <div className={styles.content}> */}
+          {sections.map((section, index) =>
+            index % 2 ? (
+              <Slide key={section.id}>
+                <Section key={section.id} section={section} right={index % 2} />
+              </Slide>
+            ) : (
+              <Slide direction="right" key={section.id}>
+                <Section key={section.id} section={section} right={index % 2} />
+              </Slide>
+            )
+          )}
+        {/* </div> */}
       </div>
       <ContactSection />
     </>

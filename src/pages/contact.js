@@ -13,7 +13,6 @@ class ContactPage extends React.Component {
     )
     const banner = get(this, 'props.data.contentfulContactPage.banner')
 
-    const meetingEmployees = get(this, "props.data.contentfulContactPage.meetingEmployees")
     return (
       <Layout
         logo={logo}
@@ -22,7 +21,7 @@ class ContactPage extends React.Component {
         // TODO: This is for the search bar, we need to update this to search the contact directly
         projects={{}}
       >
-        <Contact banner={banner} meetingEmployees={meetingEmployees} />
+        <Contact banner={banner} />
       </Layout>
     )
   }
@@ -49,13 +48,6 @@ export const pageQuery = graphql`
           width: 200
           height: 212
         )
-      }
-      meetingEmployees {
-        name
-        role
-        image {
-            gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 400)
-        }
       }
     }
   }

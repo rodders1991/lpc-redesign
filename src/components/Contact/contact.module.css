@@ -6,7 +6,7 @@
 }
 
 .container {
-  padding: 25rem 0 10rem 0;
+  padding: 20rem 0 10rem 0;
   /* height: 100vh; */
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -26,68 +26,9 @@
   max-width: 500px;
 }
 
-.calendarContainer {
-  width: 600px;
-  height: 500px;
-}
-
-.employee {
-  display: flex;
-  padding: 2rem;
-  margin: 1rem 0;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.employeeImg {
-  width: 200px;
-  height: 150px;
-  margin-right: 1rem;
-}
-
-.employeeTextContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-}
-.employeeTitle {
-  font-size: var(--text-2xl);
-  font-weight: 300;
-  margin: 0;
-}
-
-.employeeRole {
-  margin: 0;
-}
-.employeeBookButton {
-  border: 1px solid #eee;
-  background-color: #f0f0f0;
-  font-family: var(--font-sans);
-  font-size: var(--text-xl);
-  color: var(--primary);
-  font-weight: 400;
-  padding: 1rem 2.5rem;
-  cursor: pointer;
-  -o-transition: background-color 0.2s ease-in;
-  -moz-transition: background-color 0.2s ease-in;
-  -webkit-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
-}
-
-.employeeBookButton:hover {
-  background-color: #e5e5e5;
-}
-
-.employeeBookButton:active {
-  background-color: #eee;
-}
-
 @media (max-width: 1024px) {
   .subTitle {
     max-width: 400px;
-  }
-  .calendarContainer {
-    width: 500px;
   }
 }
 
@@ -100,32 +41,7 @@
   .subTitle {
     max-width: 800px;
   }
-  .calendarContainer {
-    width: 80%;
-    margin-top: 2rem;
-  }
   .container {
     padding: 10rem 0 10rem 0;
-  }
-}
-
-@media (max-width: 425px) {
-  .employee {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .employeeTextContainer {
-    height: auto;
-    margin-top: 1rem;
-  }
-  .calendarContainer {
-    margin-top: 0rem;
-  }
-  .employeeRole {
-    display: none;
-  }
-  .employeeBookButton {
-    font-size: var(--text-lg);
-    padding: 0.5rem 2rem;
   }
 }
