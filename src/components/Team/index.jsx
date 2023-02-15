@@ -7,8 +7,11 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
 import { IoLogoInstagram } from 'react-icons/io'
 
-const Employee = ({ employee: { name, image, role, about, linkedIn } }) => (
-  <div className={styles.employee}>
+const Employee = ({
+  employee: { name, image, role, about, linkedIn },
+  index,
+}) => (
+  <div className={styles.employee} style={{ animationDelay: `${index*0.5}s`}}>
     <GatsbyImage
       alt=""
       image={image.gatsbyImage}
@@ -40,8 +43,12 @@ const Team = ({ employees }) => {
         <div className={styles.teamRoot}>
           <Container maxWidth="lg">
             <div className={styles.teamRootContainer}>
-              {employees.map((employee) => (
-                <Employee key={employee.id} employee={employee} />
+              {employees.map((employee, index) => (
+                <Employee
+                  key={`${employee.id}-${index}`}
+                  employee={employee}
+                  index={index}
+                />
               ))}
             </div>
           </Container>
