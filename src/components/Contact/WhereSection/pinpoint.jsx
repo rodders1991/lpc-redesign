@@ -1,11 +1,18 @@
 import React from 'react'
-import * as styles from "./pinpoint.module.css";
+import * as styles from './pinpoint.module.css'
 
-const PinPoint = () => (
-    <div className={styles.pointContainer}>
-      <div className={styles.pinpoint}>
-      </div>
+const PinPoint = ({ markerUrl }) => {
+  return (
+    <div
+      className={styles.pointContainer}
+      // style={{ backgroundImage: `url("${markerUrl}")` }}
+    >
+      <div
+        className={styles.pinpoint}
+        style={{ backgroundImage: `url("${markerUrl}")` }}
+      ></div>
     </div>
-)
+  )
+}
 
 export default PinPoint

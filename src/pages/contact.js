@@ -13,6 +13,8 @@ class ContactPage extends React.Component {
     )
     const banner = get(this, 'props.data.contentfulContactPage.banner')
 
+    const markerUrl = get(this, 'props.data.contentfulContactPage.markerIcon.url');
+
     return (
       <Layout
         logo={logo}
@@ -21,7 +23,7 @@ class ContactPage extends React.Component {
         // TODO: This is for the search bar, we need to update this to search the contact directly
         projects={{}}
       >
-        <Contact banner={banner} />
+        <Contact banner={banner} markerUrl={markerUrl} />
       </Layout>
     )
   }
@@ -48,6 +50,9 @@ export const pageQuery = graphql`
           width: 200
           height: 212
         )
+      }
+      markerIcon {
+        url
       }
     }
   }

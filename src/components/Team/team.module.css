@@ -1,9 +1,8 @@
 .title {
+  font-size: var(--text-5xl);
+  font-weight: 500;
   color: var(--primary);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  margin-top: 40px;
-  font-size: var(--text-2xl);
+  margin-bottom: 0;
 }
 
 .teamRoot {

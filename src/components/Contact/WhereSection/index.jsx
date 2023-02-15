@@ -7,7 +7,7 @@ import * as styles from './where-section.module.css'
 import mapStyles from './map-styles'
 import PinPoint from './pinpoint'
 
-const WhereSection = () => {
+const WhereSection = ({ markerUrl }) => {
   const defaultProps = {
     center: {
       lng: -0.08767760048234095,
@@ -21,7 +21,6 @@ const WhereSection = () => {
       <Container maxWidth="xl">
         <Fade>
           <div>
-            <h3 className={styles.title}>Where to find us</h3>
             <div className={styles.container}>
               <div className={styles.map}>
                 <GoogleMapReact
@@ -36,21 +35,23 @@ const WhereSection = () => {
                     text="test"
                     lat={defaultProps.center.lat}
                     lng={defaultProps.center.lng}
+                    markerUrl={markerUrl}
                   />
                 </GoogleMapReact>
               </div>
               <div>
                 <div className={styles.textContainer}>
-                  <h3>
+                  <h3 className={styles.title}>Where to find us</h3>
+                  <h4>
                     Salisbury House <br />
                     161-162 London Wall <br />
                     London <br />
                     EC2M 5QQ <br />
-                  </h3>
-                  <h3 className={styles.phoneContainer}>
+                  </h4>
+                  <h4 className={styles.phoneContainer}>
                     {' '}
                     <Phone /> <a href="tel:+447500689297">07500 689 297</a>
-                  </h3>
+                  </h4>
                 </div>
               </div>
             </div>

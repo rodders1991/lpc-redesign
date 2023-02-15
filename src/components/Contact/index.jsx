@@ -8,7 +8,7 @@ import BackgroundImage from 'gatsby-background-image'
 import { getImage } from 'gatsby-plugin-image'
 import WhereSection from './WhereSection'
 
-const Contact = ({ banner }) => {
+const Contact = ({ banner, markerUrl }) => {
   const bannerImage = getImage(banner)
   const bannerBackgroundImage = convertToBgImage(bannerImage)
   return (
@@ -31,7 +31,7 @@ const Contact = ({ banner }) => {
           </div>
         </BackgroundImage>
       </div>
-      <WhereSection />
+      <WhereSection markerUrl={markerUrl} />
       <ContactSection />
     </>
   )

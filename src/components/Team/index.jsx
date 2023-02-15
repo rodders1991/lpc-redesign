@@ -41,7 +41,7 @@ const Team = ({ employees }) => {
           <Container maxWidth="lg">
             <div className={styles.teamRootContainer}>
               {employees.map((employee) => (
-                <Employee key={employee.name} employee={employee} />
+                <Employee key={employee.id} employee={employee} />
               ))}
             </div>
           </Container>

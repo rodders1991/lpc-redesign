@@ -5,10 +5,15 @@ import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '@mui/material'
 
-const Navigation = ({ navigation: navigationItems, logo, projects, staticStyle }) => {
+const Navigation = ({
+  navigation: navigationItems,
+  logo,
+  projects,
+  staticStyle,
+}) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchedProjects, setSearchedProjects] = useState()
-  const searchReference = useRef();
+  const searchReference = useRef()
 
   const scrollToContact = () => {
     const element = document.getElementById('contact-section')
@@ -35,41 +40,58 @@ const Navigation = ({ navigation: navigationItems, logo, projects, staticStyle }
 
   return (
     <>
-      <div className={staticStyle ? `${styles.root} ${styles.rootStatic}` : styles.root}>
+      <div
+        className={
+          staticStyle ? `${styles.root} ${styles.rootStatic}` : styles.root
+        }
+      >
         <Container maxWidth="xl">
           <div className={styles.topContainer}>
-            <button className={styles.callBackButton} onClick={scrollToContact}>
-              Request a call back
-            </button>
-            <div className={styles.searchContainer}>
-              <input placeholder='search' ref={searchReference} type="text" onChange={handleTextChange} />
+            <Link to="/" className={styles.logoLink}>
+              <GatsbyImage alt="" image={logo.gatsbyImage} />
+            </Link>
+            <div className={styles.topContainerRight}>
+              <button
+                className={styles.callBackButton}
+                onClick={scrollToContact}
+              >
+                Request a call back
+              </button>
+              <div className={styles.searchContainer}>
+                <input
+                  placeholder="search"
+                  ref={searchReference}
+                  type="text"
+                  onChange={handleTextChange}
+                />
+              </div>
             </div>
           </div>
           <div className={styles.bottomContainer}>
-            <Link
-              to="/"
-              className={styles.logoLink}
-            >
+            <Link to="/" className={styles.mobileLogo}>
               <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
-              <ul className={styles.navigation}>
-                {navigationItems.map((item) => (
-                  <li key={item.name} className={styles.navigationItem}>
-                    <Link to={item.link} activeClassName="active">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <GiHamburgerMenu
-                className={styles.hamburgerMenu}
-                size={40}
-                color="white"
-              />
+            <ul className={styles.navigation}>
+              {navigationItems.map((item) => (
+                <li key={item.name} className={styles.navigationItem}>
+                  <Link to={item.link} activeClassName="active">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <GiHamburgerMenu
+              className={styles.hamburgerMenu}
+              size={40}
+              color="white"
+            />
           </div>
         </Container>
         {searchedProjects && searchedProjects.length > 0 && (
-          <div className={styles.searchDropdown} style={{ left: searchReference.current.offsetLeft }}>
+          <div
+            className={styles.searchDropdown}
+            style={{ left: searchReference.current.offsetLeft }}
+          >
             <h3>Projects</h3>
             {searchedProjects.map((project) => (
               <h4

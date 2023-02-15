@@ -13,10 +13,23 @@
 }
 
 .topContainer {
-  float: right;
   display: flex;
   justify-content: space-between;
+  /* align-items: flex-end; */
 }
+
+.mobileLogo {
+  display: none;
+}
+
+.mobileLogo img {
+  width: 200px;
+}
+
+.topContainerRight {
+  display: flex;
+}
+
 .callBackButton {
   background: none;
   border: none;
@@ -34,12 +47,6 @@
   display: none;
 }
 
-.bottomContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-}
 .navigation {
   display: flex;
   list-style: none;
@@ -48,13 +55,10 @@
 }
 
 .navigationItem {
-  display: inline-flex;
   text-transform: uppercase;
-  align-items: center;
-  flex-direction: row;
   font-size: var(--text-md);
   font-weight: 400;
-  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .navigationItem a {
@@ -80,6 +84,13 @@
   gap: var(--space-md);
 }
 
+.bottom-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.bottom-container ul {
+  padding: 0;
+}
 .search {
   cursor: pointer;
 }
@@ -90,7 +101,7 @@
   margin-left: 1rem;
 }
 
-.searchContainer input[type=text] {
+.searchContainer input[type='text'] {
   font-family: var(--font-sans);
   width: 100%;
   padding: 3px 10px;
@@ -101,7 +112,7 @@
   font-size: larger;
 }
 
-.searchContainer input[type=text]:focus {
+.searchContainer input[type='text']:focus {
   outline-width: 0;
 }
 
@@ -110,7 +121,7 @@
   top: 56px;
   background-color: #f9f9f9;
   min-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
@@ -131,7 +142,7 @@
 @media (max-width: 1024px) {
   .navigationItem {
     font-size: var(--text-sm);
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .callBackButton {
     font-size: var(--text-md);
@@ -148,11 +159,15 @@
   .hamburgerMenu {
     display: block;
   }
-  .bottomContainer {
-    align-items: center;
-  }
   .logoLinkBack {
     margin-top: 0;
+  }
+  .mobileLogo {
+    display: block;
+  }
+  .bottom-container {
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -162,5 +177,8 @@
   }
   .container {
     padding: var(--space-md) var(--size-gutter);
+  }
+  .mobileLogo img {
+    width: 150px;
   }
 }

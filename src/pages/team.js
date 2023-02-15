@@ -43,6 +43,7 @@ export const pageQuery = graphql`
         gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 250)
       }
       employees {
+        id
         name
         role
         linkedIn

@@ -6,7 +6,7 @@
 }
 
 .subtitle {
-  font-size: var(--text-lg);
+  font-size: var(--text-3xl);
   font-weight: 300;
   margin-top: 0;
 }
@@ -15,11 +15,21 @@
 }
 .image {
     width: 100%;
+    height: 500px;
 }
 
 .section {
     display: flex;
     background-color: #eee;
+    align-items: center;
+    color: var(--primary);
+    transition: background-color 0.5s ease;
+}
+
+.section:hover {
+    display: flex;
+    background-color: var(--primary);
+    color: #eee;
     align-items: center;
 }
 
@@ -32,7 +42,10 @@
     margin-left: 3rem;
     margin-bottom: 3rem;
     max-width: 700px;
-    color: var(--primary);
+}
+
+.textContainer h2 {
+    font-size: var(--text-3xl);
 }
 
 @media (max-width: 1024px) {
