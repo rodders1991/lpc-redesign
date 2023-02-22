@@ -46,45 +46,42 @@ const Navigation = ({
         }
       >
         <Container maxWidth="xl">
-          <div className={styles.topContainer}>
+          <div className={styles.mainContainer}>
             <Link to="/" className={styles.logoLink}>
               <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
-            <div className={styles.topContainerRight}>
-              <button
-                className={styles.callBackButton}
-                onClick={scrollToContact}
-              >
-                Request a call back
-              </button>
-              <div className={styles.searchContainer}>
-                <input
-                  placeholder="search"
-                  ref={searchReference}
-                  type="text"
-                  onChange={handleTextChange}
+              <div className={styles.bottomContainer}>
+              <div className={styles.topContainerRight}>
+                  <button
+                    className={styles.callBackButton}
+                    onClick={scrollToContact}
+                  >
+                    Request a call back
+                  </button>
+                  <div className={styles.searchContainer}>
+                    <input
+                      placeholder="search"
+                      ref={searchReference}
+                      type="text"
+                      onChange={handleTextChange}
+                    />
+                  </div>
+                </div>
+                <ul className={styles.navigation}>
+                  {navigationItems.map((item) => (
+                    <li key={item.name} className={styles.navigationItem}>
+                      <Link to={item.link} activeClassName="active">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <GiHamburgerMenu
+                  className={styles.hamburgerMenu}
+                  size={40}
+                  color="white"
                 />
               </div>
-            </div>
-          </div>
-          <div className={styles.bottomContainer}>
-            <Link to="/" className={styles.mobileLogo}>
-              <GatsbyImage alt="" image={logo.gatsbyImage} />
-            </Link>
-            <ul className={styles.navigation}>
-              {navigationItems.map((item) => (
-                <li key={item.name} className={styles.navigationItem}>
-                  <Link to={item.link} activeClassName="active">
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <GiHamburgerMenu
-              className={styles.hamburgerMenu}
-              size={40}
-              color="white"
-            />
           </div>
         </Container>
         {searchedProjects && searchedProjects.length > 0 && (

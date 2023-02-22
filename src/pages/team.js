@@ -40,7 +40,7 @@ export const pageQuery = graphql`
         }
       }
       logo {
-        gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 250)
+        gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 300)
       }
       employees {
         id

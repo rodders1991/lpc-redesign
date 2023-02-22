@@ -12,22 +12,20 @@
   position: static;
 }
 
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+}
 .topContainer {
   display: flex;
   justify-content: space-between;
   /* align-items: flex-end; */
 }
 
-.mobileLogo {
-  display: none;
-}
-
-.mobileLogo img {
-  width: 200px;
-}
-
 .topContainerRight {
   display: flex;
+  align-self: flex-end;
+  margin-right: 1rem;
 }
 
 .callBackButton {
@@ -50,8 +48,9 @@
 .navigation {
   display: flex;
   list-style: none;
-  margin: 0 0 0.3rem 0;
   gap: var(--space-xl);
+  margin-top: 0.5rem;
+  align-self: flex-end;
 }
 
 .navigationItem {
@@ -84,11 +83,12 @@
   gap: var(--space-md);
 }
 
-.bottom-container {
+.bottomContainer {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.bottom-container ul {
+.bottomContainer ul {
   padding: 0;
 }
 .search {
@@ -124,6 +124,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
+  align-self: flex-end;
 }
 
 .searchDropdown h3 {
@@ -147,6 +148,12 @@
   .callBackButton {
     font-size: var(--text-md);
   }
+  .logoLink {
+    width: 210px;
+  }
+  .navigation {
+    margin-bottom: 0.3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -162,11 +169,15 @@
   .logoLinkBack {
     margin-top: 0;
   }
-  .mobileLogo {
-    display: block;
-  }
-  .bottom-container {
+  .bottomContainer {
     justify-content: space-between;
+    align-items: center;
+  }
+  .topContainerRight {
+    display: none;
+  }
+  .mainContainer {
+    display: flex;
     align-items: center;
   }
 }
@@ -177,8 +188,5 @@
   }
   .container {
     padding: var(--space-md) var(--size-gutter);
-  }
-  .mobileLogo img {
-    width: 150px;
   }
 }
