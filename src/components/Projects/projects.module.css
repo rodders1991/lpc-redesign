@@ -1,0 +1,15 @@
+.banner {
+  margin-bottom: -3rem;
+}
+.title {
+  font-size: var(--text-5xl);
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  margin-top: 0;
+}
