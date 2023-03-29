@@ -29,12 +29,12 @@ const Section = ({ section, right }) => (
   </Fade>
 )
 
-const About = ({ subtitle, sections }) => {
+const About = ({ subtitle, sections, title }) => {
   return (
     <>
       <div>
         <Container maxWidth="xl">
-          <h1 className={styles.title}>About us</h1>
+          <h1 className={styles.title}>{title}</h1>
           <p className={styles.subtitle}>{subtitle}</p>
         </Container>
         {/* <div className={styles.content}> */}

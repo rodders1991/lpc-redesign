@@ -4,20 +4,20 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import About from '../components/About'
 
-class AboutPage extends React.Component {
+class SustainabilityPage extends React.Component {
   render() {
-    const logo = get(this, 'props.data.contentfulAboutPage.logo')
+    const logo = get(this, 'props.data.contentfulSustainabilityPage.logo')
     const navigationItems = get(
       this,
-      'props.data.contentfulAboutPage.navigation.items'
+      'props.data.contentfulSustainabilityPage.navigation.items'
     )
 
     const subtitle = get(
       this,
-      'props.data.contentfulAboutPage.subtitle.subtitle'
+      'props.data.contentfulSustainabilityPage.subtitle'
     )
 
-    const sections = get(this, 'props.data.contentfulAboutPage.sections')
+    const policies = get(this, 'props.data.contentfulSustainabilityPage.policies')
 
     return (
       <Layout
@@ -27,17 +27,17 @@ class AboutPage extends React.Component {
         projects={{}}
         navigationStatic
       >
-        <About title="About us" subtitle={subtitle} sections={sections} />
+        <About title="Sustainability" subtitle={subtitle} sections={policies} />
       </Layout>
     )
   }
 }
 
-export default AboutPage
+export default SustainabilityPage
 
 export const pageQuery = graphql`
-  query AboutPage {
-    contentfulAboutPage {
+  query SustainabilityPage {
+    contentfulSustainabilityPage {
       navigation {
         items {
           name
@@ -47,10 +47,8 @@ export const pageQuery = graphql`
       logo {
         gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 350)
       }
-      subtitle {
-        subtitle
-      }
-      sections {
+      subtitle
+      policies {
         header
         content {
           raw
