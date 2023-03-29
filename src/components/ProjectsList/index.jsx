@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel'
 import ArrowButton from '../ArrowButton/arrow-button'
 import * as styles from './projects-list.module.css'
 
-const Project = ({ project, right }) => (
+const Project = ({ project, right, hideLink }) => (
   <div
     id={project.id}
     className={
@@ -35,7 +35,14 @@ const Project = ({ project, right }) => (
     </Carousel>
     <div className={styles.textContainer}>
       <div className={styles.buttonContainer}>
-        <ArrowButton link="/" label={project.name} textColor="#928D88" small />
+        {!hideLink && (
+          <ArrowButton
+            link="/"
+            label={project.name}
+            textColor="#928D88"
+            small
+          />
+        )}
         <p>{project.shortDescription}</p>
       </div>
       <div className={styles.textContentContainer}>
@@ -80,19 +87,40 @@ const Project = ({ project, right }) => (
   </div>
 )
 
-const ProjectsList = ({ projects }) => (
+const ProjectsList = ({ projects, hideLink, alignAllLeft }) => (
   <div>
-    {projects.map((project, index) =>
-      index % 2 ? (
+    {projects.map((project, index) => {
+      if (alignAllLeft) {
+        return (
+          <Slide key={project.id}>
+            <Project
+              key={project.id}
+              project={project}
+              hideLink={hideLink}
+            />
+          </Slide>
+        )
+      }
+      return index % 2 ? (
         <Slide key={project.id}>
-          <Project key={project.id} project={project} right={index % 2} />
+          <Project
+            key={project.id}
+            project={project}
+            right={index % 2}
+            hideLink={hideLink}
+          />
         </Slide>
       ) : (
         <Slide direction="right" key={project.id}>
-          <Project key={project.id} project={project} right={index % 2} />
+          <Project
+            key={project.id}
+            project={project}
+            right={index % 2}
+            hideLink={hideLink}
+          />
         </Slide>
       )
-    )}
+    })}
   </div>
 )
 
