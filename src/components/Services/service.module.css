@@ -20,17 +20,20 @@
 
 .service {
   color: #444;
-  width: 400px;
+  width: 250px;
   opacity: 0;
   animation: 0.5s ease-out 0s 1 expandImage;
   animation-fill-mode: forwards;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .serviceImg {
-  height: 200px;
+  height: 150px;
   width: 50%;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 @keyframes expandImage {
@@ -47,7 +50,7 @@
   transform: scale(1);
 } */
 .serviceTitle {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 600;
   margin: 1.5rem 0 0.5rem 0;
 }
