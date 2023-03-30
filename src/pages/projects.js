@@ -51,7 +51,7 @@ export const pageQuery = graphql`
         name
         client
         images {
-          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000)
+          gatsbyImage(layout: CONSTRAINED, placeholder: BLURRED, width: 1000, height: 700)
         }
         sector
         contractPeriod

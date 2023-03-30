@@ -6,11 +6,8 @@ import { Container } from '@mui/material'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
 
-const Service = ({
-  service: { name, icon, subTitle },
-  index,
-}) => (
-  <div className={styles.service} style={{ animationDelay: `${index*0.5}s`}}>
+const Service = ({ service: { name, icon, subTitle }, index }) => (
+  <div className={styles.service} style={{ animationDelay: `${index * 0.5}s` }}>
     <GatsbyImage
       alt=""
       image={icon.gatsbyImage}
@@ -18,9 +15,7 @@ const Service = ({
       className={styles.serviceImg}
     />
     <div className={styles.serviceTopTextContainer}>
-      <div>
-        <h3 className={styles.serviceTitle}>{name}</h3>
-      </div>
+      <h3 className={styles.serviceTitle}>{name}</h3>
     </div>
     <p className={styles.serviceAbout}>{subTitle}</p>
   </div>

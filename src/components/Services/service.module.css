@@ -27,13 +27,13 @@
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .serviceImg {
   height: 150px;
   width: 50%;
   margin-bottom: 0rem;
+  align-self: center;
 }
 
 @keyframes expandImage {
@@ -53,6 +53,7 @@
   font-size: var(--text-xl);
   font-weight: 600;
   margin: 1.5rem 0 0.5rem 0;
+  width: 100%;
 }
 
 .serviceTopTextContainer {
