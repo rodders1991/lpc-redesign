@@ -14,7 +14,6 @@ const Projects = ({ projects }) => {
       </div>
       <ProjectsList
         hideLink
-        alignAllLeft
         projects={projects.sort(
           ({ sortScore: sortScoreA }, { sortScore: sortScoreB }) =>
             (sortScoreB || 0) - (sortScoreA - 0)
