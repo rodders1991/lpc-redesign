@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'gatsby'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { GrClose } from 'react-icons/gr'
 import * as styles from './navigation.module.css'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Container } from '@mui/material'
@@ -10,8 +11,10 @@ const Navigation = ({
   logo,
   projects,
   staticStyle,
+  location
 }) => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [mobileMenuActive, setMobileMenuActive] = useState(false)
   const [searchedProjects, setSearchedProjects] = useState()
   const searchReference = useRef()
 
@@ -38,8 +41,32 @@ const Navigation = ({
     }
   }, [searchTerm, projects])
 
+  useEffect(() => {
+    setMobileMenuActive(false)
+  }, [location])
+
   return (
     <>
+      {mobileMenuActive && (
+        <div className={styles.mobileMenu}>
+          <div className={styles.mobileCloseContainer}>
+            <GrClose
+              color="white"
+              size={40}
+              onClick={() => setMobileMenuActive(false)}
+            />
+          </div>
+          <ul className={styles.mobileNavigation}>
+            {navigationItems.map((item) => (
+              <li key={item.name} className={styles.mobileNavigationItem}>
+                <Link to={item.link} activeClassName="active">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div
         className={
           staticStyle ? `${styles.root} ${styles.rootStatic}` : styles.root
@@ -50,38 +77,39 @@ const Navigation = ({
             <Link to="/" className={styles.logoLink}>
               <GatsbyImage alt="" image={logo.gatsbyImage} />
             </Link>
-              <div className={styles.bottomContainer}>
+            <div className={styles.bottomContainer}>
               <div className={styles.topContainerRight}>
-                  <button
-                    className={styles.callBackButton}
-                    onClick={scrollToContact}
-                  >
-                    Request a call back
-                  </button>
-                  <div className={styles.searchContainer}>
-                    <input
-                      placeholder="search"
-                      ref={searchReference}
-                      type="text"
-                      onChange={handleTextChange}
-                    />
-                  </div>
+                <button
+                  className={styles.callBackButton}
+                  onClick={scrollToContact}
+                >
+                  Request a call back
+                </button>
+                <div className={styles.searchContainer}>
+                  <input
+                    placeholder="search"
+                    ref={searchReference}
+                    type="text"
+                    onChange={handleTextChange}
+                  />
                 </div>
-                <ul className={styles.navigation}>
-                  {navigationItems.map((item) => (
-                    <li key={item.name} className={styles.navigationItem}>
-                      <Link to={item.link} activeClassName="active">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <GiHamburgerMenu
-                  className={styles.hamburgerMenu}
-                  size={40}
-                  color="white"
-                />
               </div>
+              <ul className={styles.navigation}>
+                {navigationItems.map((item) => (
+                  <li key={item.name} className={styles.navigationItem}>
+                    <Link to={item.link} activeClassName="active">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <GiHamburgerMenu
+                className={styles.hamburgerMenu}
+                size={40}
+                color="white"
+                onClick={() => setMobileMenuActive(true)}
+              />
+            </div>
           </div>
         </Container>
         {searchedProjects && searchedProjects.length > 0 && (
