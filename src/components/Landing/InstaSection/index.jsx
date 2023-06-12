@@ -32,6 +32,10 @@ const InstaSection = () => {
   let columnNumber = 0
   let columnedItems = [[], [], [], []]
 
+  if (!items || items.length) {
+    return null;
+  }
+
   items.forEach((item) => {
     if (columnNumber === 4) {
       columnNumber = 0
