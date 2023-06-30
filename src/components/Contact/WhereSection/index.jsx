@@ -2,7 +2,6 @@ import { Container } from '@mui/material'
 import React from 'react'
 import { Fade } from 'react-awesome-reveal'
 import GoogleMapReact from 'google-map-react'
-import { Phone } from '@mui/icons-material'
 import * as styles from './where-section.module.css'
 import mapStyles from './map-styles'
 import PinPoint from './pinpoint'
@@ -47,10 +46,6 @@ const WhereSection = ({ markerUrl }) => {
                     161-162 London Wall <br />
                     London <br />
                     EC2M 5QQ <br />
-                  </h4>
-                  <h4 className={styles.phoneContainer}>
-                    {' '}
-                    <Phone /> <a href="tel:+447500689297">07500 689 297</a>
                   </h4>
                 </div>
               </div>

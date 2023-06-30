@@ -28,14 +28,6 @@
     font-weight: 500;
 }
 
-.phoneContainer {
-    display: flex;
-    align-content: flex-end;
-    color: var(--accent);
-}
-.phoneContainer svg {
-    margin-right: 0.5rem;
-}
 @media (max-width: 768px) {
     .root {
         padding-bottom: 3rem;
