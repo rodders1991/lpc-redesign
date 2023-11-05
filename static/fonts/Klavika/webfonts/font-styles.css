@@ -1,0 +1,141 @@
+/*
+- - - > |  @font-face  | < - - - 
+*/
+/* Klavika Web Basic Light */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicLight/KlavikaWebBasicLight.eot');
+	src: url('KlavikaWebBasicLight/KlavikaWebBasicLight.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicLight/KlavikaWebBasicLight.woff2') format('woff2'),
+         url('KlavikaWebBasicLight/KlavikaWebBasicLight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	}
+
+/* Klavika Web Basic Light Italic */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicLightItalic/KlavikaWebBasicLightItalic.eot');
+	src: url('KlavikaWebBasicLightItalic/KlavikaWebBasicLightItalic.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicLightItalic/KlavikaWebBasicLightItalic.woff2') format('woff2'),
+         url('KlavikaWebBasicLightItalic/KlavikaWebBasicLightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	}
+
+/* Klavika Web Basic Regular */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicRegular/KlavikaWebBasicRegular.eot');
+	src: url('KlavikaWebBasicRegular/KlavikaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicRegular/KlavikaWebBasicRegular.woff2') format('woff2'),
+         url('KlavikaWebBasicRegular/KlavikaWebBasicRegular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	}
+
+/* Klavika Web Basic Regular Italic */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicRegularItalic/KlavikaWebBasicRegularItalic.eot');
+	src: url('KlavikaWebBasicRegularItalic/KlavikaWebBasicRegularItalic.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicRegularItalic/KlavikaWebBasicRegularItalic.woff2') format('woff2'),
+         url('KlavikaWebBasicRegularItalic/KlavikaWebBasicRegularItalic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	}
+
+/* Klavika Web Basic Medium */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicMedium/KlavikaWebBasicMedium.eot');
+	src: url('KlavikaWebBasicMedium/KlavikaWebBasicMedium.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicMedium/KlavikaWebBasicMedium.woff2') format('woff2'),
+         url('KlavikaWebBasicMedium/KlavikaWebBasicMedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	}
+
+/* Klavika Web Basic Medium Italic */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicMediumItalic/KlavikaWebBasicMediumItalic.eot');
+	src: url('KlavikaWebBasicMediumItalic/KlavikaWebBasicMediumItalic.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicMediumItalic/KlavikaWebBasicMediumItalic.woff2') format('woff2'),
+         url('KlavikaWebBasicMediumItalic/KlavikaWebBasicMediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	}
+
+/* Klavika Web Basic Bold */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicBold/KlavikaWebBasicBold.eot');
+	src: url('KlavikaWebBasicBold/KlavikaWebBasicBold.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicBold/KlavikaWebBasicBold.woff2') format('woff2'),
+         url('KlavikaWebBasicBold/KlavikaWebBasicBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	}
+
+/* Klavika Web Basic Bold Italic */
+	@font-face {
+	font-family: 'KlavikaWebBasic';
+	src: url('KlavikaWebBasicBoldItalic/KlavikaWebBasicBoldItalic.eot');
+	src: url('KlavikaWebBasicBoldItalic/KlavikaWebBasicBoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('KlavikaWebBasicBoldItalic/KlavikaWebBasicBoldItalic.woff2') format('woff2'),
+         url('KlavikaWebBasicBoldItalic/KlavikaWebBasicBoldItalic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+	}
+
+/*
+- - - > |  Font Classes  | < - - - 
+*/
+.KlavikaWebBasicLight {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 300;
+	font-style: normal;
+	}
+
+.KlavikaWebBasicLightItalic {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 300;
+	font-style: italic;
+	}
+
+.KlavikaWebBasicRegular {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 400;
+	font-style: normal;
+	}
+
+.KlavikaWebBasicRegularItalic {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 400;
+	font-style: italic;
+	}
+
+.KlavikaWebBasicMedium {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 500;
+	font-style: normal;
+	}
+
+.KlavikaWebBasicMediumItalic {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 500;
+	font-style: italic;
+	}
+
+.KlavikaWebBasicBold {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 700;
+	font-style: normal;
+	}
+
+.KlavikaWebBasicBoldItalic {
+	font-family: 'KlavikaWebBasic';
+	font-weight: 700;
+	font-style: italic;
+	}
