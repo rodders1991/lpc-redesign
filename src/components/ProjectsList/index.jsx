@@ -43,7 +43,6 @@ const Project = ({ project, right, hideLink }) => (
             small
           />
         )}
-        <p>{project.shortDescription}</p>
       </div>
       <div className={styles.textContentContainer}>
         <h2>{project.name}</h2>
